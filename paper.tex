@@ -1,0 +1,914 @@
+% =========================================================================
+% SciPost LaTeX template
+% Version 2021-08
+%
+% Submissions to SciPost Journals should make use of this template.
+%
+% INSTRUCTIONS: simply look for the `TODO:' tokens and adapt your file.
+%
+% You can also make use of our empty "skeleton" templates for each Journal,
+% e.g. SciPostPhys_skeleton.tex
+% =========================================================================
+
+
+% TODO: uncomment ONE of the class declarations below
+
+% Class declaration format: \documentclass[submission, {DOI label of journal}]{SciPost}
+% where the DOI label of the journal should be one of:
+% Phys          (for SciPost Physics)
+% PhysCore      (for SciPost Physics Core)
+% PhysLectNotes (for SciPost Physics Lecture Notes)
+% PhysProc      (for SciPost Physics Proceedings -> !! Please use the conference-specific template which you will find on our website !!
+% PhysCodeb     (for SciPost Physics Codebases)
+% Astro         (for SciPost Astronomy)
+% Bio           (for SciPost Biology)
+% Chem          (for SciPost Chemistry)
+% CompSci       (for SciPost Computer Science)
+% Math          (for SciPost Mathematics)
+
+
+%% PHYSICS:
+% If you are submitting a paper to SciPost Physics: uncomment next line
+\documentclass[submission, Phys]{SciPost}
+% If you are submitting a paper to SciPost Physics Core: uncomment next line
+%\documentclass[submission, PhysCore]{SciPost}
+% If you are submitting a paper to SciPost Physics Lecture Notes: uncomment next line
+%\documentclass[submission, PhysLectNotes]{SciPost}
+% If you are submitting a paper to SciPost Physics Proceedings: uncomment next line
+%\documentclass[submission, PhysProc]{SciPost}
+% If you are submitting a paper to SciPost Physics Codebases: uncomment next line
+%\documentclass[submission, PhysCodeb]{SciPost}
+
+%% ASTRONOMY:
+% If you are submitting a paper to SciPost Astronomy: uncomment next line
+% \documentclass[submission, Astro]{SciPost}
+
+%% BIOLOGY:
+% If you are submitting a paper to SciPost Biology: uncomment next line
+% \documentclass[submission, Bio]{SciPost}
+
+%% CHEMISTRY:
+% If you are submitting a paper to SciPost Chemistry: uncomment next line
+% \documentclass[submission, Chem]{SciPost}
+
+%% COMPUTER SCIENCE:
+% If you are submitting a paper to SciPost Computer Science: uncomment next line
+% \documentclass[submission, CompSci]{SciPost}
+
+%% MATHEMATICS:
+% If you are submitting a paper to SciPost Mathematics: uncomment next line
+% \documentclass[submission, Math]{SciPost}
+
+
+
+% Prevent all line breaks in inline equations.
+\binoppenalty=10000
+\relpenalty=10000
+
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\usepackage[bitstream-charter]{mathdesign}
+\urlstyle{sf}
+
+% Fix \cal and \mathcal characters look (so it's not the same as \mathscr)
+\DeclareSymbolFont{usualmathcal}{OMS}{cmsy}{m}{n}
+\DeclareSymbolFontAlphabet{\mathcal}{usualmathcal}
+
+\newcommand{\llangle}{\left\langle}
+\newcommand{\rrangle}{\right\rangle}
+\newcommand{\llbrace}{\left\lbrace}
+\newcommand{\mc}{\mathcal}
+\newcommand{\rrbrace}{\right\rbrace}
+\newcommand{\bpm}{\begin{pmatrix}}
+	\newcommand{\lp}{\left(}
+	\newcommand{\re}{\text{Re}\,}
+	\newcommand{\bs}{\boldsymbol}
+	\newcommand{\mf}{\mathbf}
+	\newcommand{\im}{\text{Im}\,}
+	\newcommand{\lb}{\left[}
+	\newcommand{\vol}{\text{Vol}}
+	\newcommand{\rb}{\right]}
+	\newcommand{\diag}{\text{diag}\,}
+	\newcommand{\sgn}{\text{sgn}}
+	\newcommand{\rp}{\right)}
+	\newcommand{\e}{\epsilon}
+	\newcommand{\epm}{\end{pmatrix}}
+\DeclareMathOperator{\tr}{tr}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\bra{\langle}{\rvert}
+\DeclarePairedDelimiter\ket{\lvert}{\rangle}
+\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1 \delimsize\vert #2}
+\newcommand{\ba}{\begin{eqnarray}}
+\newcommand{\ban}{\begin{eqnarray}\nn}
+\newcommand{\ea}{\end{eqnarray}}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\nn}{\nonumber}
+\newcommand{\p}{\mathcal P}
+% note definition
+\newcommand{\note}[1]{{\bf \color{red} #1}}
+
+\begin{document}
+
+% TODO: write your article's title here.
+% The article title is centered, Large boldface, and should fit in two lines
+\begin{center}{\Large \textbf{
+The transfer matrix method of bulk and surface superlattice response
+}}\end{center}
+
+% TODO: write the author list here. Use first name (+ other initials) + surname format.
+% Separate subsequent authors by a comma, omit comma and use "and" for the last author.
+% Mark the corresponding author with a superscript star.
+\begin{center}
+Christian Boyd$^\star$
+\end{center}
+
+% TODO: write all affiliations here.
+% Format: institute, city, country
+\begin{center}
+Department of Physics, University of Illinois at Urbana-Champaign, Urbana, IL 61801, USA
+% TODO: provide email address of corresponding author
+${}^\star$ {\small \sf Boyd.Christian.M@gmail.com}
+\end{center}
+
+\begin{center}
+\today
+\end{center}
+
+% For convenience during refereeing (optional),
+% you can turn on line numbers by uncommenting the next line:
+%\linenumbers
+% You should run LaTeX twice in order for the line numbers to appear.
+
+\section*{Abstract}
+{\bf
+--- Come back at end ---\\
+This note should be transformed into a paper on transfer matrix methods used to extract the superlattice response.
+}
+
+
+% TODO: include a table of contents (optional)
+% Guideline: if your paper is longer that 6 pages, include a TOC
+% To remove the TOC, simply cut the following block
+\vspace{10pt}
+\noindent\rule{\textwidth}{1pt}
+\tableofcontents\thispagestyle{fancy}
+\noindent\rule{\textwidth}{1pt}
+\vspace{10pt}
+
+
+
+
+
+
+
+
+
+
+
+\section{The electromagnetic framework}
+\label{section: electromagnetic framework}
+
+The benefit of the electromagnetic framework is that one can infer the electronic response of the material from a purely electromagnetic calculation of the electric potential in a material perturbed by an external charge density.  By working with a theory of potentials and charge densities, we are implicitly restricting our study to the non-relativistic, non-retarded limit; in terms of the wavevector $q$ and frequency $\omega$ of excitations under consideration, this translates to the regime $q^2\gg \omega^2/c^2$.  The perturbing field $\phi_{ext}$ in an electromagnetic analysis is chosen for convenience, since its role is to generate the desired material response.  Given a particular $\phi_{ext}$, we work backwards by characterizing the many-electron screening of the material through the action of the electronic density response function $\chi$,\footnote{I.e., we are ignoring ionic contributions to the electromagnetic screening response.  This neglected response would nevertheless contribute to charge density probes like EELS.}
+\begin{equation}
+    \label{real space chi def}
+    \rho_{ind}(r,t) = e^2\int d^3 r' dt' \chi(r,r';t-t')\phi_{ext}(r',t')
+    \,\,\,,
+\end{equation}
+where $\rho_{ind}$ is the electronic charge density induced by the externally-sourced electric potential $\phi_{ext}$.  The induced charge density \eqref{real space chi def} sources the material screening field $\phi_{ind}$ through Gauss's law, which has the Fourier components
+\begin{equation}
+    \label{Fourier phi ind}
+    \phi_{ind}(q,\omega) = \frac{\rho_{ind}(q,\omega)}{\e_0 q^2}
+    \,\,\,.
+\end{equation}
+The total potential $\phi$, at the level of linear response, is then given by the sum
+\begin{equation}
+    \label{phi def}
+    \phi(q,\omega) = \phi_{ind}(q,\omega) + \phi_{ext}(q,\omega)
+    \,\,\,,
+\end{equation}
+which contains the material response through $\phi_{ind}$ \eqref{Fourier phi ind}.  
+
+When using an electromagnetic (or ``dielectric") analysis to extract the electron energy loss function, we ultimately desire the frequency- and wavevector-resolved density response function,
+\begin{equation}
+    \label{Fourier chi}
+    \chi(q,\omega):=\chi(q,q';\omega)_{q=q'}
+    :=
+    \lb\frac{1}{\vol}\int d^3 r d^3 r' e^{iq\cdot r} e^{-i q'\cdot r'}\chi(r,r';\omega)\rb_{q=q'}
+    \,\,\,.
+\end{equation}
+The difficulty of modeling the response of a material is often due to its lack of homogeneity, which results in the need for the double Fourier transform in \eqref{Fourier chi}.  In systems with translation-invariance, \eqref{Fourier chi} reduces to the expected Fourier transform.  When applied to a superlattice, we presume translation-invariance in the planar directions (those perpendicular to the superlattice dimension), but have only discrete translation symmetry in the layering direction.  As such, out-of-plane wavevectors are only conserved up to reciprocal lattice vectors,
+\begin{equation}
+    \label{Fourier chi expression}
+    \chi(q_\parallel,\omega;z,z') = \sum_G e^{iG z} \int \frac{dk}{2\pi} e^{ik(z-z')}\chi(q_\parallel,\omega;k+G,k)
+    \,\,\,,
+\end{equation}
+where $q_\parallel$ is the planar component of the Fourier wavevector and the sum is over all out-of-plane reciprocal vectors.  As is standard, we enumerate the continuous out-of-plane wavevector $k$ in \eqref{Fourier chi expression} through its restriction to the first Brillouin zone --- denoted by $\bar k$ --- and a remainder, which is a reciprocal lattice vector.  Now, the Fourier transform of $\chi$ is a matrix in the out-of-plane reciprocal vectors and \eqref{Fourier chi expression} becomes
+\begin{equation}
+    \label{Fourier chi G matrix}
+    \chi(q_\parallel,\omega;z,z') = \sum_{G,G'} e^{iG z} e^{-i G' z'} \int_\text{BZ} \frac{d\bar k}{2\pi} e^{i\bar k(z-z')}\chi(q_\parallel,\omega;\bar k+G,\bar k+G')
+    \,\,\,.
+\end{equation}
+
+The structure of \eqref{Fourier chi G matrix} transforms the real-space linear response relationship of \eqref{real space chi def} into the matrix equation
+\begin{equation}
+    \label{planar linear response}
+     \rho_{ind}(q_\parallel,\omega;\bar k+G) = e^2\sum_{G'}\chi(q_\parallel,\omega;\bar k+G, \bar k+G')
+     \phi_{ext}(q_\parallel,\omega;\bar k+G')
+     \,\,\,,
+\end{equation}
+which results an analogous matrix equation for the screening field,
+\begin{equation}
+    \label{planar phi ind}
+     \phi_{ind}(q_\parallel,\omega;\bar k+G) = \frac{e^2}{\e_0\lb q_\parallel^2+\lp\bar k+G\rp^2\rb} \sum_{G'}\chi(q_\parallel,\omega;\bar k+G, \bar k+G')
+     \phi_{ext}(q_\parallel,\omega;\bar k+G')
+     \,\,\,.
+\end{equation}
+The reciprocal components of the (total) potential $\phi$ can now be written in terms of $\phi_{ext}$ through the linear response relation as
+\begin{equation}
+    \label{planar phi to phi ext relation}
+    \phi(q_\parallel,\omega;\bar k+G) 
+    =
+    \sum_{G'}
+    \lb
+    \delta_{G,G'}
+    +
+    V(q_\parallel,\bar k+G)
+    \chi(q_\parallel,\omega;\bar k+G, \bar k+G')
+    \rb
+    \phi_{ext}(q_\parallel,\omega;\bar k+ G')
+    \,\,\,,
+\end{equation}
+where we've collected the prefactor of \eqref{planar phi ind} into the Coulomb interaction,
+\begin{equation}
+    \label{V def}
+    V(q_\parallel,\bar k+G):=
+    \frac{e^2}{\e_0\lb q_\parallel^2+\lp\bar k+G\rp^2\rb}
+    \,\,\,.
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{The superlattice perturbed by a plane wave charge density}
+
+
+\subsection{The unperturbed superlattice}
+
+A superlattice made up of layered 2D conducting planes can be defined by the inter-layer spacing $a$, the background dielectric constant $\e$, and the planar conductivity $\sigma(q,\omega)$ at each plane.\footnote{Moving forward, $q$ is a planar wavevector and the capitalized $Q$ will refer to an out-of-plane wavevector.}  The screening response of the superlattice (beyond the background dielectric constant) is entirely encoded within the electrostatic boundary conditions across each conducting plane.\footnote{I.e., we're strictly considering the non-retarded limit.}  After taking the Fourier transform along the planar directions, we have that the potential $\phi$ must be continuous,
+\begin{equation}
+    \label{phi continuity}
+    \lim_{z\to z_0^-}\phi(q,z) = \lim_{z\to z_0^+}\phi(q,z)
+    \,\,\,,
+\end{equation}
+across any boundary and that the discontinuity in the normal derivative of the displacement potential ($\phi_D = \e\phi$) across a conducting plane located at $z=z_0$ is due to the (planar) conducting charge density $\rho$,
+\begin{equation}
+    \label{phi discontinuity expression}
+    \lim_{z\to z_0^-}\partial_z\phi(q,z) - \lim_{z\to z_0^+}\partial_z\phi(q,z) = \frac{\rho(q)}{\e\e_0}
+    \,\,\,.
+\end{equation}
+The continuity equation,
+\begin{equation}
+\label{continuity equation}
+    -i\omega\rho(q,\omega) +iq\cdot j(q,\omega) = 0
+    \,\,\,,
+\end{equation}
+allows us to relate the planar (or sheet) current density $j$ to the planar charge density $\rho$.  Along a conducting plane located at $z=z_0$, the definition of the planar conductivity $\sigma$ provides
+\begin{equation}
+    \label{conductivity def}
+    j(q,\omega) = \sigma(q,\omega) E_\parallel(q,\omega,z_0) = \sigma(q,\omega) \lb -i q\rb\phi(q,\omega,z_0)
+    \,\,\,,
+\end{equation}
+where we note the (2D) vector nature of the planar wavevector $q$.  The continuity equation \eqref{continuity equation} then determines the (induced) planar charge density $\rho$ in terms of $\sigma$ as
+\begin{equation}
+\label{charge density conductivity relation}
+\rho(q,\omega) =
+\lb\frac{q^2\sigma(q,\omega)}{i\omega}\rb\,\phi(q,\omega,z_0)
+\,\,\,.
+\end{equation}
+Since the continuity of $\phi$ \eqref{phi continuity} guarantees the uniqueness of $\phi(q,z_0)$, we can re-write the discontinuity of the normal derivative across a conducting plane \eqref{phi discontinuity expression} through \eqref{charge density conductivity relation} as
+\begin{equation}
+    \label{phi discontinuity in terms of phi no bar sigma}
+    \lim_{z\to z_0^-}\partial_z\phi(q,\omega,z) - \lim_{z\to z_0^+}\partial_z\phi(q,\omega,z) = \lb\frac{q^2\sigma(q,\omega)}{i\omega\e\e_0}\rb\,\phi(q,\omega,z_0)
+    \,\,\,.
+\end{equation}
+As a matter of convenience, we define the dimensionless quantity $\bar\sigma$,
+\begin{equation}
+    \label{bar sigma def}
+    \bar\sigma(q,\omega):=
+    \frac{|q|\sigma(q,\omega)}{i\omega\e\e_0}
+    \,\,\,,
+\end{equation}
+so that \eqref{phi discontinuity in terms of phi no bar sigma} becomes
+\begin{equation}
+    \label{phi discontinuity in terms of phi}
+    \lim_{z\to z_0^-}\partial_z\phi(q,\omega,z) - \lim_{z\to z_0^+}\partial_z\phi(q,\omega,z) = |q|\bar\sigma(q,\omega)\phi(q,\omega,z_0)
+    \,\,\,.
+\end{equation}
+
+The only free charges\footnote{Here and throughout, ``free charges" are relative to whatever bound charge makes up the dielectric background.  All charges not accounted for by the dielectric screening in $\e$ are ``free" in this sense, including the conducting charge density along each plane and any external charge density perturbing the superlattice.} in the (unperturbed) superlattice are confined to the conducting planes; as a result, the potential within each layer is a homogeneous solution to Gauss's law,
+\begin{equation}
+    \label{unsourced Gauss}
+    -\lb\partial_z^2-q^2\rb\phi(q,\omega,z) = 0
+    \,\,\,.
+\end{equation}
+The general solution to \eqref{unsourced Gauss} is a sum of growing and decaying modes,
+\begin{equation}
+    \label{phi homogeneous}
+    \phi(q,\omega,z) = \phi_-(q,\omega) e^{-|q|z} + \phi_+(q,\omega) e^{+|q|z}
+    \,\,\,,
+\end{equation}
+where the $\phi_\pm$ within each layer must be fixed by boundary conditions.  As a matter of bookkeeping, we center one of the conducting planes along $z=0$ and refer to the layer between $z=na$ and $z=(n+1)a$ as the $n$th layer.  Since the structure of the homogeneous solution \eqref{phi homogeneous} is universal to the layers, we can re-scale the $\phi_{\pm}$ within each layer so that
+\begin{equation}
+    \label{nth layer phi}
+    na<z<(n+1)a\implies
+    \phi(q,\omega,z) = \phi_{n-}(q,\omega) e^{-|q|(z-na)} + \phi_{n+}(q,\omega)e^{+|q|(z-na)}
+    \,\,\,.
+\end{equation}
+We can now write the boundary conditions across the conducting plane at $z=(n+1)a$ as
+\begin{equation}
+    \label{superlattice cont init}
+    e^{-|q|a} \phi_{n-}(q,\omega) + e^{+|q|a}\phi_{n+}(q,\omega) = 
+    \phi_{(n+1)-}(q,\omega)+\phi_{(n+1)+}(q,\omega)
+\end{equation}
+and
+\begin{equation}
+    \label{superlattice discont init}
+    e^{-|q|a} \phi_{n-}(q,\omega) - e^{+|q|a}\phi_{n+}(q,\omega) = 
+    \phi_{(n+1)-}(q,\omega)-\phi_{(n+1)+}(q,\omega)
+    -
+    \bar\sigma(q,\omega)\phi\big(q,z=(n+1)a\big)
+    .
+\end{equation}
+The continuity of $\phi$ across an interface allows us to use either layer's coefficients to enumerate the potential at $z=(n+1)a$; choosing the coefficients of the $(n+1)$th layer, we have that \eqref{superlattice discont init} becomes
+\begin{equation}
+    \label{superlattice discont init expression}
+    e^{-|q|a} \phi_{n-}(q,\omega) - e^{+|q|a}\phi_{n+}(q,\omega) = 
+   \lb1-\bar\sigma(q,\omega)\rb \phi_{(n+1)-}(q,\omega)-\lb1+\bar\sigma(q,\omega)\rb \phi_{(n+1)+}(q,\omega)
+   \,.
+\end{equation}
+To simplify the notation, we suppress explicit $q$ and $\omega$ dependence in all quantities so that we can write the boundary conditions as
+\begin{align}
+    \label{unperturbed BC1}
+    f \phi_{n-} + f^{-1}\phi_{n+} &= \phi_{(n+1)-} + \phi_{(n+1)+}
+    \,\,\,,
+    \\
+    \label{unperturbed BC2}
+    f \phi_{n-} - f^{-1}\phi_{n+} &= (1-\bar\sigma)\phi_{(n+1)-}-(1+\bar\sigma)\phi_{(n+1)+}
+    \,\,\,\,,
+\end{align}
+where we've defined
+\begin{equation}
+    \label{f def}
+    f(q):=e^{-|q|a}
+    \,\,\,.
+\end{equation}
+The payoff for re-scaling coefficients in \eqref{nth layer phi} is that we've  removed any layer dependence in the boundary conditions \eqref{unperturbed BC1} and \eqref{unperturbed BC2}: the coefficients of each layer are related to the next in the same way.
+
+The unperturbed superlattice is amenable to a transfer matrix treatment since the boundary conditions \eqref{unperturbed BC1} and \eqref{unperturbed BC2} are linear relations between the unknown $\phi_{n\pm}$ within one layer and the $\phi_{(n+1)\pm}$ of the next.  Defining a vector of the unknown coefficients in each layer through
+\begin{equation}
+    \label{phi vec def}
+    \ket{\phi_n}:=\bpm
+    \phi_{n-}
+    \\\
+    \phi_{n+}
+    \epm
+    \,\,\,,
+\end{equation}
+we can re-write the boundary conditions \eqref{unperturbed BC1} and \eqref{unperturbed BC2} as a matrix equation,
+\begin{equation}
+    \label{matrix BC}
+    M\ket{\phi_n}= N\ket{\phi_{n+1}}
+    \,\,\,,
+\end{equation}
+where we've defined the matrices
+\begin{equation}
+    \label{M def}
+    M:=\bpm
+    f & f^{-1}
+    \\
+    f & -f^{-1}
+    \epm
+\end{equation}
+and
+\begin{equation}
+    \label{N def}
+    N:=
+    \bpm
+    1 & 1
+    \\
+    (1-\bar\sigma) & -(1+\bar \sigma)
+    \epm
+    \,\,\,.
+\end{equation}
+It's easy to see that 
+\begin{equation}
+    \label{M and N det}
+    \det M = \det N = -2
+    \,\,\,,
+\end{equation}
+which allows us to freely invert $M$ and $N$ to define the transfer matrix,
+\begin{equation}
+    \label{T def}
+    T:= N^{-1} M
+    \,\,\,,
+\end{equation}
+with inverse
+\begin{equation}
+    \label{T inv def}
+    T^{-1} = M^{-1} N
+    \,\,\,.
+\end{equation}
+The transfer matrix \eqref{T def} provides the $(n+1)$th layer's coefficients in terms of the preceding layer,
+\begin{equation}
+    \label{T action}
+    T\ket{\phi_n} = \ket{\phi_{n+1}}
+    \,\,\,,
+\end{equation}
+and vice versa through its inverse \eqref{T inv def},
+\begin{equation}
+    \label{T inv action}
+    T^{-1}\ket{\phi_{n+1}} = \ket{\phi_n}
+    \,\,\,.
+\end{equation}
+Given the growing/decaying homogeneous coefficients within one layer, we can then determine the potential within the entire superlattice.
+
+While it may at first seem like a technicality, it's physically significant that the determinants of $M$ and $N$ in \eqref{M and N det} cause $T$ as defined in \eqref{T def} to be {\it unimodular}:
+\begin{equation}
+    \label{T det}
+    \det T =1
+    \,\,\,.
+\end{equation}
+As a unimodular matrix, $T$ must have two (possibly degenerate) non-zero eigenvalues $\tau_{\pm}$ that multiply to unity:
+\begin{equation}
+    \label{unimodular eigenvalues}
+    \tau_+\tau_- = 1
+    \,\,\,.
+\end{equation}
+If we consider the possibility that either of the $|\tau_\pm|=1$ at real-valued $q$ and $\omega$, then the superlattice would support infinitely propagating electrostatic modes without attenuation.\footnote{This is the case, for example, when using a dissipationless, free electron conductivity along the conducting planes.  The resulting plasma modes are unphysical in that they never decay.  Nevertheless, the dissipative corrections to the plasmon dispersion in good metals (e.g., Aluminum) are small due to the relatively long scattering lifetimes.}  In a physical system with dissipation, however, such modes must decay on a finite length scale, which enables us to uniquely label the $\tau_\pm$ according to
+\begin{equation}
+    \label{eigenvalue relation}
+    |\tau_-|<1<|\tau_+|
+    \,\,\,.
+\end{equation}
+The eigenvectors $\ket{t_\pm}$,
+\begin{equation}
+    \label{eigenvector def}
+    T\ket{t_\pm} = \tau_\pm\ket{t_\pm}
+    \,\,\,,
+\end{equation}
+then provide a basis for growing and decaying modes in the superlattice.
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{The superlattice screening response}
+
+Let's now perturb the superlattice by a charge density with a plane wave profile,
+\begin{equation}
+    \label{rho ext}
+    \rho_{ext}(q,\omega,z) = \rho_0(q,Q,\omega) e^{i Q z}
+    \,\,\,,
+\end{equation}
+which sources Gauss's law as
+\begin{equation}
+    \label{perturbation Gauss law}
+    -\lb\partial_z^2-q^2\rb\phi(q,z,\omega) = \frac{\rho_0(q,Q,\omega)}{\e\e_0} e^{i Q z}
+    \,\,\,.
+\end{equation}
+The particular solution to \eqref{perturbation Gauss law} is given by
+\begin{equation}
+    \label{phi ext def}
+    \phi_{ext}(q,z,\omega) = \phi_0(q,Q,\omega)\, e^{i Q z}
+    \,\,\,,
+\end{equation}
+where we've defined
+\begin{equation}
+    \label{phi0 def}
+    \phi_0(q,Q,\omega) := \frac{\rho_0(q,Q,\omega)}{\e\e_0\lp q^2+Q^2\rp}
+    \,\,\,.
+\end{equation}
+Notably, the solution \eqref{phi ext def} is already continuous, which means it will not contribute to the constraint enforcing continuity of the total potential in \eqref{unperturbed BC1}.  If we examine the discontinuity across $z=(n+1)a$ as written in \eqref{superlattice discont init}, we see that $\bar\sigma$ multiplies the {\it total} potential $\phi$ at $z=(n+1)a$, not just the homogeneous part.  Including the perturbing potential \eqref{phi ext def} in the discontinuity boundary condition, we have
+\begin{align}
+    \label{perturbed BC1 expression}
+    f \phi_{n-} + f^{-1}\phi_{n+} &= \phi_{(n+1)-} + \phi_{(n+1)+}
+    \,\,\,,
+    \\
+    \label{perturbed BC2 expression}
+    f \phi_{n-} - f^{-1}\phi_{n+} &= (1-\bar\sigma)\phi_{(n+1)-}-(1+\bar\sigma)\phi_{(n+1)+} - \bar\sigma \phi_0 e^{i Q(n+1)a}
+    \,\,\,\,,
+\end{align}
+where we've suppressed explicit $q$, $Q$, and $\omega$ dependence of the various coefficients.  As written, the boundary conditions \eqref{perturbed BC1 expression} and \eqref{perturbed BC2 expression} depend on the layer index $n$, but we can remove this dependence by further scaling the $\phi_{n\pm}$ beyond \eqref{nth layer phi} via
+\begin{equation}
+    \label{Q scaled phi pm}
+    \phi_{n\pm}(q,Q,\omega) =: \bar\phi_{n\pm}(q,Q,\omega) \phi_0(q,Q,\omega) e^{i Q n a}
+    \,\,\,.
+\end{equation}
+In terms of the dimensionless $\bar\phi_{n\pm}$ \eqref{Q scaled phi pm}, the boundary conditions across $z=(n+1)a$ are now
+\begin{align}
+    \label{perturbed BC1}
+    bf \bar\phi_{n-} + bf^{-1}\bar\phi_{n+} &= \bar\phi_{(n+1)-} + \bar\phi_{(n+1)+}
+    \,\,\,,
+    \\
+    \label{perturbed BC2}
+    bf \bar\phi_{n-} - bf^{-1}\bar\phi_{n+} &= (1-\bar\sigma)\bar\phi_{(n+1)-}-(1+\bar\sigma)\bar\phi_{(n+1)+} - \bar\sigma
+    \,\,\,\,,
+\end{align}
+where we've additionally defined
+\begin{equation}
+    \label{b def}
+    b(Q):=e^{-i Q a}
+    \,\,\,.
+\end{equation}
+
+The coefficients between layers are no longer directly proportional due to the altered boundary conditions in \eqref{perturbed BC1} and \eqref{perturbed BC2}; nevertheless, we can still write the boundary conditions as a matrix equation,
+\begin{equation}
+    \label{perturbed matrix BC}
+    bM\ket{\bar\phi_n} = N\ket{\bar \phi_{n+1}}
+    -
+    \bpm
+    0
+    \\
+    \bar\sigma
+    \epm
+    \,\,\,.
+\end{equation}
+Going from the $n$th to the $(n+1)$th layer can now be accomplished via
+\begin{equation}
+    \label{forward T relation}
+    \ket{\bar\phi_{n+1}}
+    =
+    bT\ket{\bar\phi_n}+\ket r
+    \,\,\,,
+\end{equation}
+where we've defined the remainder term:
+\begin{equation}
+    \label{r def}
+    \ket r := N^{-1}\bpm
+    0
+    \\
+    \bar\sigma
+    \epm
+    \,\,\,.
+\end{equation}
+By induction, repeated application of \eqref{forward T relation} provides
+\begin{equation}
+    \label{forward j T relation}
+    \ket{\bar\phi_{n+j}} = b^j T^j\ket{\bar\phi_{n}} + \sum_{m=0}^{j-1} b^m T^m\ket r
+    \,\,\,,
+\end{equation}
+where $j\ge1$.  Similarly, we can go backwards from the $n$th layer to the $(n-1)$th layer via
+\begin{equation}
+    \label{backward T relation}
+    \ket{\bar\phi_{n-1}} = b^{-1}T^{-1}\ket{\bar\phi_{n}} + \ket d
+    \,\,\,,
+\end{equation}
+where we've defined a distinct remainder term:
+\begin{equation}
+    \label{d def}
+    \ket d:=M^{-1}
+    \bpm
+    0
+    \\
+    -b^{-1}\bar\sigma
+    \epm
+    \,\,\,.
+\end{equation}
+Analogously, we find that repeated application of \eqref{backward T relation} provides
+\begin{equation}
+    \label{backward j T relation}
+    \ket{\bar\phi_{n-j}}
+    =
+    b^{-j} T^{-j}\ket{\bar\phi_n} +\sum_{m=0}^{j-1}b^{-m}T^{-m}\ket d
+    \,\,\,,
+\end{equation}
+where $j\ge1$.
+
+In order to enforce boundary conditions, it's convenient to work in the eigenvector basis, where we decompose the $\ket{\bar\phi_n}$ as
+\begin{equation}
+    \label{eigen decomp phi}
+    \ket{\bar\phi_n}=:\bar\phi_{n t_-}\ket{t_-} + \bar\phi_{nt_+}\ket{t_+}
+\end{equation}
+and $\ket r$ as
+\begin{equation}
+    \label{eigen decomp r}
+    \ket r =: r_-\ket{t_-}+r_+\ket{t_+}
+    \,\,\,.
+\end{equation}
+The geometric formula,
+\begin{equation}
+    \label{geometric series}
+    \sum_{m=0}^{j-1} x^m = \frac{1-x^j}{1-x}
+    \,\,\,,
+\end{equation}
+allows us to write \eqref{forward j T relation} as
+\begin{equation}
+    \label{forward j T eigen}
+    \ket{\bar\phi_{n+j}} = 
+    \lp 
+    b^j \tau_-^j\bar\phi_{nt_-} + r_-\frac{1-b^j\tau_-^j}{1-b\tau_-}
+    \rp\ket{t_-}
+    +
+    \lp
+    b^j\tau_+^j\bar\phi_{nt_+}+r_+\frac{1-b^j\tau_+^j}{1-b\tau_+}
+    \rp\ket{t_+}
+    \,\,\,.
+\end{equation}
+Since $|\tau_-|<1$ and $|b|=1$ from \eqref{b def}, the terms within the first parentheses of \eqref{forward j T eigen} remain bounded as $j\to\infty$ ($z\to\infty$); the terms within the second parentheses, however, diverge since $|\tau_+|>1$.  In order for the potential to remain bounded as $z\to\infty$, the coefficient of the exponentially growing term must vanish, which provides the constraint
+\begin{equation}
+    \label{forward BC}
+    \bar\phi_{nt_+}=\frac{r_+}{1-b\tau_+}
+    \,\,\,.
+\end{equation}
+Similarly, we can decompose the remainder $\ket d$ in the eigenvector basis,
+\begin{equation}
+    \label{eigen decomp d}
+    \ket d=:d_-\ket{t_-} + d_+\ket{t_+}
+    \,\,\,,
+\end{equation}
+and use the geometric formula \eqref{geometric series} to write \eqref{backward j T relation} as
+\begin{equation}
+    \label{backward j T eigen}
+    \ket{\bar\phi_{n-j}} = 
+    \lp
+    b^{-j}\tau_-^{-j}\bar\phi_{nt_-} + d_- \frac{1-b^{-j}\tau_-^{-j}}{1-b^{-1}\tau_-^{-1}}
+    \rp
+    \ket{t_-}
+    +
+    \lp
+    b^{-j}\tau_+^{-j}\bar\phi_{nt_+}
+    +
+    d_+\frac{1-b^{-j}\tau_+^{-j}}{1-b^{-1}\tau_+^{-1}}
+    \rp
+    \ket{t_+}
+    \,\,\,.
+\end{equation}
+Upon inverting the eigenvalue inequalities in \eqref{eigenvalue relation} and recalling the unimodularity condition \eqref{unimodular eigenvalues}, $|\tau_-^{-1}|=|\tau_+|>1$ causes the terms within the first parentheses of \eqref{backward j T eigen} to diverge as $j\to\infty$ ($z\to-\infty$); since $|\tau_+^{-1}|=|\tau_-|<1$, the terms within the second parentheses are unaffected.  In order for the potential to remain bounded as $z\to-\infty$, we must have that
+\begin{equation}
+    \label{backward BC}
+    \bar\phi_{nt_-} = \frac{d_-}{1-b^{-1}\tau_-^{-1}} = \frac{d_-}{1-b^{-1}\tau_+}
+    \,\,\,.
+\end{equation}
+Through the eigenvector decompositions for $\ket{\bar\phi_n}$ \eqref{eigen decomp phi}, $\ket r$ \eqref{eigen decomp r}, and $\ket d$ \eqref{eigen decomp d}, the boundedness constraints in \eqref{forward BC} and \eqref{backward BC} totally determine the $\ket{\bar\phi_n}$ and subsequently the potential within the entire superlattice.
+
+\note{Next}: Fourier transform this solution along the $z$-direction so that $\chi$ can be extracted from \eqref{planar phi to phi ext relation}.  In particular, the long wavelength response to a long wavelength perturbation is a scalar relationship with $G,G'=0$ fixed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{appendix}
+
+
+% 
+% Below is an older derivation focused on the classical electron trajectory model of reflection EELS.  I preferred the more modern framework presented in the current text.
+%
+
+
+% \section{Previous/old notes (ignore): \texorpdfstring{ \\}{ } The~classical~trajectory~combined~with~linear~response}
+% \label{section: old classical loss derivation}
+
+% {\bf Caution}: Likely some unit shenanigans going on with factors of $e^2$.  Overall sign seems correct since negative work $\to$ positive energy loss of the classical electron along its trajectory.  Use for reference, not as a way to check factors of 2, etc.
+
+
+% By considering a classical transmission trajectory without reflection
+% \ba
+% r(t) = v t
+% \ea
+% for an electron with constant vector velocity $v$, the work done along this trajectory by the induced electric field $E_{ind}$ can be straightforwardly written as
+% \ba
+% W = -e v\cdot\int dt\, E_{ind}(r(t),t)\,\,\,.
+% \ea
+% The desired classical probability distribution $P(q_\parallel,\omega)$ is obtained in the usual way through writing the work in terms of its Fourier modes
+% \ba
+% W=\int \frac{d^2 q_\parallel}{(2\pi)^2} \int_0^\infty d\omega\, \hbar\omega P(q_\parallel,\omega)\,\,\,.
+% \ea 
+% Despite being a bulk transmission calculation, whose cross section is typically written in terms of a 3D momentum $q=(q_\parallel,q_z)$, energy and momentum conservation of the electron kinematics imply the additional constraint $\omega=v_\parallel\cdot q_\parallel +v_z q_z$.  This kinematical constraint means at least one momentum degree of freedom must vary with the energy loss.  Without loss of generality, and focusing on the experimental reality in which the inelastic contribution is aligned along the "$z$" direction, the probability distribution $P(q_\parallel,\omega)$ is oriented to choose
+% \ba
+% q_z=q_z(\omega)\approx \omega-v_\parallel\cdot q_\parallel
+% \ea
+% with $(q_\parallel,\omega)$ fixed.  Performing the necessary Fourier transforms,
+% \ba
+% W &=&
+% -ev\cdot\int \frac{d\omega d^3 q}{(2\pi)^4} dt\, e^{-i\omega t} e^{iq\cdot v t} E_{ind}(q,\omega)
+% \\ &=&
+% -ev\cdot\int\frac{d^3 q dt}{(2\pi)^4} \int_0^\infty d\omega\lb
+%  e^{-i\omega t} e^{iq\cdot v t} E_{ind}(q,\omega)
+%  +
+%   e^{i\omega t} e^{iq\cdot v t} E_{ind}(q,-\omega)
+% \rb
+% \\(t,q)\to(-t,-q) &=&
+% -ev\cdot\int\frac{d^3 q dt}{(2\pi)^4} \int_0^\infty d\omega e^{i(q\cdot v-\omega)t}\lb
+% E_{ind}(q,\omega)
+% + E_{ind}(-q,-\omega)
+% \rb
+% \\ &=&
+% -2ev\cdot\int\frac{d^3 q dt}{(2\pi)^4} \int_0^\infty d\omega e^{i(q\cdot v-\omega)t}\,\re E_{ind}(q,\omega)
+% \\ \label{Eind work} &=&
+% -2ev\cdot\int\frac{d^3 q}{(2\pi)^3} \int_0^\infty d\omega\, \delta(\omega-q\cdot v)\, \re E_{ind}(q,\omega)\,\,\,.
+% \ea
+% Now all that's required is the induced electric field {\it inside} the material due to the electron along its trajectory.  The density,
+% \ba
+% \rho_e(r,t) &=&
+% -e\delta^3(r-r(t))=-e\delta^3(r-vt)
+% \\
+% \rho_e(q,\omega) &=&
+% -e\int dt d^3 r e^{i\omega t} e^{-iq\cdot r} \delta^3(r-vt)
+% =
+% -e\int dt e^{i(\omega-q\cdot v)t}
+% \\ &=& -2\pi e\delta(\omega-q\cdot v)
+% \ea
+% can be combined with the Poission equation to find the external potential
+% \ba
+% \phi_{ext}(q,\omega) = -\frac{2\pi e}{q^2 \e_0}\delta(\omega-q\cdot v)\,\,\,.
+% \ea
+% The linear response input is solely through the electronic density response function $\chi(q,\omega)$ defined via
+% \ba
+% \rho_{ind}(q,\omega) = e^2 \chi(q,\omega) \phi_{ext}(q,\omega)\,\,\,.
+% \ea
+% Using the linear response of the material,
+% \ba
+% \rho_{ind}(q,\omega) = -\frac{2\pi e^3}{q^2 \e_0}\delta(\omega-q\cdot v)\,\chi(q,\omega)
+% \ea
+% so that the induced potential is
+% \ba
+% \phi_{ind}(q,\omega) = -\frac{2\pi}{e}\,\delta(\omega-q\cdot v)\lp\frac{e^2}{q^2\e_0}\rp^2\chi(q,\omega)\,\,\,.
+% \ea
+% The relation between the induced electric field $E_{ind}$ and the induced potential $\phi_{ind}$ is the usual one
+% \ba
+% E_{ind}=-iq\, \phi_{ind}(q,\omega)
+% \ea
+% so that
+% \ba
+% \re E_{ind}(q,\omega)
+% =
+% q\im \phi_{ind}(q,\omega)
+% =
+% -q\,\lb\frac{2\pi}{e}\,\delta(\omega-q\cdot v)\lp\frac{e^2}{q^2\e_0}\rp^2\chi''(q,\omega)\rb\,\,\,.
+% \ea
+% Above, the notation is severely suppressed so that $q$ is the vector whose direction provides the vector nature of $E$ and $\chi''$ is defined as the imaginary part of $\chi$:
+% \ba
+% \chi(q,\omega)=: \chi'(q,\omega)+i\chi''(q,\omega)\,\,\,.
+% \ea
+% Returning to the work calculation \eqref{Eind work},
+% \ba
+% W &=&
+% 2\int\frac{d^3 q}{(2\pi)^2} \int_0^\infty d\omega\, \lb \delta(\omega-q\cdot v)\rb^2
+% \lp\frac{e^2}{\e_0 q^2}\rp^2
+% \lp v\cdot q\rp\chi''(q,\omega)\,\,\,.
+% \ea
+% The squared delta function is not particularly kind to work with; however, I believe it has a simple interpretation.  The delta function must have units so that 
+% \ba
+% \int d\omega \delta(\omega-v\cdot q) = 1
+% \ea
+% or, in other words, takes on units of time.  Using one of these delta functions sets the other's argument to zero, which can be thought of as a time volume factor
+% \ba
+% T_V = \delta(\omega-v\cdot q)_{\omega-v\cdot q=0} = \int \frac{dt}{2\pi}\,\,\,.
+% \ea
+% This overall time volume factor is, of course, an infinite time scale which implies the work done along this classical trajectory diverges.  Physically speaking, this completely sensible as the electron trajectory is infinite, completely within the bulk of the material, and will surely suffer an energy loss proportionate to the time spent within the material.  It is in the interest of obtaining a finite quantity that the {\it stopping power}, or work per unit time, should be considered when calculating bulk losses.  {\it Note:  In the case of surface losses, the energy loss along the classical trajectory is finite as a result of decaying induced fields far from the surface and little (if any) time spent inside the material.}  Dividing out the temporal volume $T_V$, the stopping power along the classical transmission trajectory is
+% \ba
+% \frac{W}{T_V} &=&
+% 2 \int\frac{d^3 q}{(2\pi)^2} \int_0^\infty d\omega\, \delta(\omega-q\cdot v)
+% \lp\frac{e^2}{\e_0 q^2}\rp^2
+% \lp v\cdot q\rp \chi''(q,\omega)\,\,\,.
+% \ea
+% The process which can be easily related to a real transmission EELS experiment is one in which the electron trajectory is aligned along the beam direction, which is itself aligned along a crystallographic axis $\hat i$ so that $v=v_i\hat i$.  Unlike the surface scattering analysis, $\hat z$ is not necessarily along the optical axis, but some generic direction.  The delta function then becomes
+% \ba
+% \delta(\omega-v\cdot q)=\delta(\omega-v_i q_i) = \frac{1}{v_z}\delta(q_i-\omega/v_i)
+% \ea
+% so that the stopping power is
+% \ba
+% \frac{W}{T_V} &=&
+% 2 \int\frac{d^3 q}{(2\pi)^2} \int_0^\infty d\omega\, \lb \frac{1}{v_i}\delta(q_i-\omega/v_i)\rb
+% \lp\frac{e^2}{\e_0 q^2}\rp^2
+% \lp v_i q_i\rp \chi''(q,\omega)
+% \\ &=&
+% \frac{2}{v_z}\int\frac{d^2 q_\perp}{(2\pi)^2} \int_0^\infty d\omega\,\omega
+% \lb \lp\frac{e^2}{\e_0\lb q_\perp^2+q_i^2\rb}\rp^2 \chi''(q_\perp,q_i,\omega) \rb_{q_i=\omega/v_i}\,\,\,.
+% \ea
+% This notation is distinct from the surface scattering analysis, where $q_\parallel$ is the in-plane momentum transfer parallel to the material surface.  In the bulk analysis $q_i$ is parallel to the electron beam, which is {\it perpendicular} to the material surface of a thin film that might be used in  a transmission EELS experiment.  It is the momentum transfer $q_\perp$ that lies in the surface plane of a thin film perpendicular to the electron beam.  
+% \\
+
+% By extending the definition of the classical energy loss distribution $P(q,\omega)$ to its analogous stopping power variant, the energy loss distribution is identified as
+% \ba
+% P(q_\perp,\omega) = \frac{2}{\hbar v_i}\lb \lp\frac{e^2}{\e_0\lb q_\perp^2+q_i^2\rb}\rp^2 \chi''(q_\perp,q_i,\omega) \rb_{q_i=\omega/v_i}\,\,\,.
+% \ea
+% In transmission experiments, very high energy ($\sim 100$ keV) electrons are used so that $\omega/v_i$ is negligible relative to any finite $q_\perp$ up to the tens of eV relevant to typical plasmon studies.  A practical evaluation, then, is to set $q_i=0$ in the expression.  A typical transmission EELS experiment will then be incapable of resolving the acoustic-optical bulk plasmon continuum when the electron beam is perpendicular to the easily-cleaved planar axis of a layered system; i.e., $q_i=0$ is along the layer stacking direction and so only the optical plasmon can be resolved.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Bibliography call}
+Need a bibliography call to avoid errors with the SciPost template: \cite{Mills1972}.
+
+
+
+
+
+
+\end{appendix}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\bibliography{mybib/mybib.bib}
+
+
+\nolinenumbers
+
+\end{document}

@@ -1,0 +1,3 @@
+[submodule "bib/mybib"]
+	path = bib/mybib
+	url = git@github.com:ChristianMBoyd/mybib.git
