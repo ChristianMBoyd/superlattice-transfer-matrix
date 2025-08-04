@@ -1,74 +1,23 @@
 \documentclass{article}
 
-\usepackage{fancyhdr}
-\usepackage{color}
+\input{properties/packages.tex}
 
-\usepackage{amsmath}
-\usepackage{hyperref}
+\input{properties/aliases}
 
-\usepackage[bitstream-charter]{mathdesign}
-\urlstyle{sf}
-
-% "Borrowed" from SciPost
-% Fix \cal and \mathcal characters look (so it's not the same as \mathscr)
-\DeclareSymbolFont{usualmathcal}{OMS}{cmsy}{m}{n}
-\DeclareSymbolFontAlphabet{\mathcal}{usualmathcal}
-
-\newcommand{\llangle}{\left\langle}
-\newcommand{\rrangle}{\right\rangle}
-\newcommand{\llbrace}{\left\lbrace}
-\newcommand{\mc}{\mathcal}
-\newcommand{\rrbrace}{\right\rbrace}
-\newcommand{\bpm}{\begin{pmatrix}}
-\newcommand{\lp}{\left(}
-\newcommand{\re}{\text{Re}\,}
-\newcommand{\bs}{\boldsymbol}
-\newcommand{\mf}{\mathbf}
-\newcommand{\im}{\text{Im}\,}
-\newcommand{\lb}{\left[}
-\newcommand{\vol}{\text{Vol}}
-\newcommand{\rb}{\right]}
-\newcommand{\diag}{\text{diag}\,}
-\newcommand{\sgn}{\text{sgn}}
-\newcommand{\rp}{\right)}
-\newcommand{\e}{\epsilon}
-\newcommand{\epm}{\end{pmatrix}}
-\DeclareMathOperator{\tr}{tr}
-\usepackage{mathtools}
-\DeclarePairedDelimiter\bra{\langle}{\rvert}
-\DeclarePairedDelimiter\ket{\lvert}{\rangle}
-\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1 \delimsize\vert #2}
-\newcommand{\ba}{\begin{eqnarray}}
-\newcommand{\ban}{\begin{eqnarray}\nn}
-\newcommand{\ea}{\end{eqnarray}}
-\newcommand{\be}{\begin{equation}}
-\newcommand{\ee}{\end{equation}}
-\newcommand{\nn}{\nonumber}
-\newcommand{\p}{\mathcal P}
-% note definition
-\newcommand{\note}[1]{{\bf \color{red} #1}}
+\input{properties/settings.tex}
 
 \begin{document}
 
-% TODO: write your article's title here.
-% The article title is centered, Large boldface, and should fit in two lines
 \begin{center}{\Large \textbf{
 The transfer matrix method of bulk and surface superlattice response
 }}\end{center}
 
-% TODO: write the author list here. Use first name (+ other initials) + surname format.
-% Separate subsequent authors by a comma, omit comma and use "and" for the last author.
-% Mark the corresponding author with a superscript star.
 \begin{center}
-Christian Boyd$^\star$
+Christian Boyd
 \end{center}
 
-% TODO: write all affiliations here.
-% Format: institute, city, country
 \begin{center}
-Department of Physics, University of Illinois at Urbana-Champaign, Urbana, IL 61801, USA
-% TODO: provide email address of corresponding author
-${}^\star$ {\small \sf Boyd.Christian.M@gmail.com}
+{\small \sf Boyd.Christian.M@gmail.com}
 \end{center}
 
 \begin{center}
@@ -78,17 +27,12 @@ ${}^\star$ {\small \sf Boyd.Christian.M@gmail.com}
 
 \section*{Abstract}
 {\bf
---- Come back at end ---\\
-This note should be transformed into a paper on transfer matrix methods used to extract the superlattice response.
+This note demonstrates how to derive the bulk and surface electrostatic screening response of superlattices.
 }
 
-
-% TODO: include a table of contents (optional)
-% Guideline: if your paper is longer that 6 pages, include a TOC
-% To remove the TOC, simply cut the following block
 \vspace{10pt}
 \noindent\rule{\textwidth}{1pt}
-\tableofcontents\thispagestyle{fancy}
+\tableofcontents
 \noindent\rule{\textwidth}{1pt}
 \vspace{10pt}
 
