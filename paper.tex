@@ -1,80 +1,15 @@
-% =========================================================================
-% SciPost LaTeX template
-% Version 2021-08
-%
-% Submissions to SciPost Journals should make use of this template.
-%
-% INSTRUCTIONS: simply look for the `TODO:' tokens and adapt your file.
-%
-% You can also make use of our empty "skeleton" templates for each Journal,
-% e.g. SciPostPhys_skeleton.tex
-% =========================================================================
+\documentclass{article}
 
+\usepackage{fancyhdr}
+\usepackage{color}
 
-% TODO: uncomment ONE of the class declarations below
-
-% Class declaration format: \documentclass[submission, {DOI label of journal}]{SciPost}
-% where the DOI label of the journal should be one of:
-% Phys          (for SciPost Physics)
-% PhysCore      (for SciPost Physics Core)
-% PhysLectNotes (for SciPost Physics Lecture Notes)
-% PhysProc      (for SciPost Physics Proceedings -> !! Please use the conference-specific template which you will find on our website !!
-% PhysCodeb     (for SciPost Physics Codebases)
-% Astro         (for SciPost Astronomy)
-% Bio           (for SciPost Biology)
-% Chem          (for SciPost Chemistry)
-% CompSci       (for SciPost Computer Science)
-% Math          (for SciPost Mathematics)
-
-
-%% PHYSICS:
-% If you are submitting a paper to SciPost Physics: uncomment next line
-\documentclass[submission, Phys]{SciPost}
-% If you are submitting a paper to SciPost Physics Core: uncomment next line
-%\documentclass[submission, PhysCore]{SciPost}
-% If you are submitting a paper to SciPost Physics Lecture Notes: uncomment next line
-%\documentclass[submission, PhysLectNotes]{SciPost}
-% If you are submitting a paper to SciPost Physics Proceedings: uncomment next line
-%\documentclass[submission, PhysProc]{SciPost}
-% If you are submitting a paper to SciPost Physics Codebases: uncomment next line
-%\documentclass[submission, PhysCodeb]{SciPost}
-
-%% ASTRONOMY:
-% If you are submitting a paper to SciPost Astronomy: uncomment next line
-% \documentclass[submission, Astro]{SciPost}
-
-%% BIOLOGY:
-% If you are submitting a paper to SciPost Biology: uncomment next line
-% \documentclass[submission, Bio]{SciPost}
-
-%% CHEMISTRY:
-% If you are submitting a paper to SciPost Chemistry: uncomment next line
-% \documentclass[submission, Chem]{SciPost}
-
-%% COMPUTER SCIENCE:
-% If you are submitting a paper to SciPost Computer Science: uncomment next line
-% \documentclass[submission, CompSci]{SciPost}
-
-%% MATHEMATICS:
-% If you are submitting a paper to SciPost Mathematics: uncomment next line
-% \documentclass[submission, Math]{SciPost}
-
-
-
-% Prevent all line breaks in inline equations.
-\binoppenalty=10000
-\relpenalty=10000
-
-\hypersetup{
-    colorlinks,
-    linkcolor={red!50!black},
-    citecolor={blue!50!black},
-    urlcolor={blue!80!black}
-}
+\usepackage{amsmath}
+\usepackage{hyperref}
 
 \usepackage[bitstream-charter]{mathdesign}
 \urlstyle{sf}
 
+% "Borrowed" from SciPost
 % Fix \cal and \mathcal characters look (so it's not the same as \mathscr)
 \DeclareSymbolFont{usualmathcal}{OMS}{cmsy}{m}{n}
 \DeclareSymbolFontAlphabet{\mathcal}{usualmathcal}
@@ -85,19 +20,19 @@
 \newcommand{\mc}{\mathcal}
 \newcommand{\rrbrace}{\right\rbrace}
 \newcommand{\bpm}{\begin{pmatrix}}
-	\newcommand{\lp}{\left(}
-	\newcommand{\re}{\text{Re}\,}
-	\newcommand{\bs}{\boldsymbol}
-	\newcommand{\mf}{\mathbf}
-	\newcommand{\im}{\text{Im}\,}
-	\newcommand{\lb}{\left[}
-	\newcommand{\vol}{\text{Vol}}
-	\newcommand{\rb}{\right]}
-	\newcommand{\diag}{\text{diag}\,}
-	\newcommand{\sgn}{\text{sgn}}
-	\newcommand{\rp}{\right)}
-	\newcommand{\e}{\epsilon}
-	\newcommand{\epm}{\end{pmatrix}}
+\newcommand{\lp}{\left(}
+\newcommand{\re}{\text{Re}\,}
+\newcommand{\bs}{\boldsymbol}
+\newcommand{\mf}{\mathbf}
+\newcommand{\im}{\text{Im}\,}
+\newcommand{\lb}{\left[}
+\newcommand{\vol}{\text{Vol}}
+\newcommand{\rb}{\right]}
+\newcommand{\diag}{\text{diag}\,}
+\newcommand{\sgn}{\text{sgn}}
+\newcommand{\rp}{\right)}
+\newcommand{\e}{\epsilon}
+\newcommand{\epm}{\end{pmatrix}}
 \DeclareMathOperator{\tr}{tr}
 \usepackage{mathtools}
 \DeclarePairedDelimiter\bra{\langle}{\rvert}
@@ -140,10 +75,6 @@ ${}^\star$ {\small \sf Boyd.Christian.M@gmail.com}
 \today
 \end{center}
 
-% For convenience during refereeing (optional),
-% you can turn on line numbers by uncommenting the next line:
-%\linenumbers
-% You should run LaTeX twice in order for the line numbers to appear.
 
 \section*{Abstract}
 {\bf
@@ -724,140 +655,140 @@ Through the eigenvector decompositions for $\ket{\bar\phi_n}$ \eqref{eigen decom
 \begin{appendix}
 
 
-% 
-% Below is an older derivation focused on the classical electron trajectory model of reflection EELS.  I preferred the more modern framework presented in the current text.
-%
+
+Below is an older derivation focused on the classical electron trajectory model of reflection EELS.  I preferred the more modern framework presented in the current text.
 
 
-% \section{Previous/old notes (ignore): \texorpdfstring{ \\}{ } The~classical~trajectory~combined~with~linear~response}
-% \label{section: old classical loss derivation}
 
-% {\bf Caution}: Likely some unit shenanigans going on with factors of $e^2$.  Overall sign seems correct since negative work $\to$ positive energy loss of the classical electron along its trajectory.  Use for reference, not as a way to check factors of 2, etc.
+\section{Previous/old notes (ignore): \texorpdfstring{ \\}{ } The~classical~trajectory~combined~with~linear~response}
+\label{section: old classical loss derivation}
+
+{\bf Caution}: Likely some unit shenanigans going on with factors of $e^2$.  Overall sign seems correct since negative work $\to$ positive energy loss of the classical electron along its trajectory.  Use for reference, not as a way to check factors of 2, etc.
 
 
-% By considering a classical transmission trajectory without reflection
-% \ba
-% r(t) = v t
-% \ea
-% for an electron with constant vector velocity $v$, the work done along this trajectory by the induced electric field $E_{ind}$ can be straightforwardly written as
-% \ba
-% W = -e v\cdot\int dt\, E_{ind}(r(t),t)\,\,\,.
-% \ea
-% The desired classical probability distribution $P(q_\parallel,\omega)$ is obtained in the usual way through writing the work in terms of its Fourier modes
-% \ba
-% W=\int \frac{d^2 q_\parallel}{(2\pi)^2} \int_0^\infty d\omega\, \hbar\omega P(q_\parallel,\omega)\,\,\,.
-% \ea 
-% Despite being a bulk transmission calculation, whose cross section is typically written in terms of a 3D momentum $q=(q_\parallel,q_z)$, energy and momentum conservation of the electron kinematics imply the additional constraint $\omega=v_\parallel\cdot q_\parallel +v_z q_z$.  This kinematical constraint means at least one momentum degree of freedom must vary with the energy loss.  Without loss of generality, and focusing on the experimental reality in which the inelastic contribution is aligned along the "$z$" direction, the probability distribution $P(q_\parallel,\omega)$ is oriented to choose
-% \ba
-% q_z=q_z(\omega)\approx \omega-v_\parallel\cdot q_\parallel
-% \ea
-% with $(q_\parallel,\omega)$ fixed.  Performing the necessary Fourier transforms,
-% \ba
-% W &=&
-% -ev\cdot\int \frac{d\omega d^3 q}{(2\pi)^4} dt\, e^{-i\omega t} e^{iq\cdot v t} E_{ind}(q,\omega)
-% \\ &=&
-% -ev\cdot\int\frac{d^3 q dt}{(2\pi)^4} \int_0^\infty d\omega\lb
-%  e^{-i\omega t} e^{iq\cdot v t} E_{ind}(q,\omega)
-%  +
-%   e^{i\omega t} e^{iq\cdot v t} E_{ind}(q,-\omega)
-% \rb
-% \\(t,q)\to(-t,-q) &=&
-% -ev\cdot\int\frac{d^3 q dt}{(2\pi)^4} \int_0^\infty d\omega e^{i(q\cdot v-\omega)t}\lb
-% E_{ind}(q,\omega)
-% + E_{ind}(-q,-\omega)
-% \rb
-% \\ &=&
-% -2ev\cdot\int\frac{d^3 q dt}{(2\pi)^4} \int_0^\infty d\omega e^{i(q\cdot v-\omega)t}\,\re E_{ind}(q,\omega)
-% \\ \label{Eind work} &=&
-% -2ev\cdot\int\frac{d^3 q}{(2\pi)^3} \int_0^\infty d\omega\, \delta(\omega-q\cdot v)\, \re E_{ind}(q,\omega)\,\,\,.
-% \ea
-% Now all that's required is the induced electric field {\it inside} the material due to the electron along its trajectory.  The density,
-% \ba
-% \rho_e(r,t) &=&
-% -e\delta^3(r-r(t))=-e\delta^3(r-vt)
-% \\
-% \rho_e(q,\omega) &=&
-% -e\int dt d^3 r e^{i\omega t} e^{-iq\cdot r} \delta^3(r-vt)
-% =
-% -e\int dt e^{i(\omega-q\cdot v)t}
-% \\ &=& -2\pi e\delta(\omega-q\cdot v)
-% \ea
-% can be combined with the Poission equation to find the external potential
-% \ba
-% \phi_{ext}(q,\omega) = -\frac{2\pi e}{q^2 \e_0}\delta(\omega-q\cdot v)\,\,\,.
-% \ea
-% The linear response input is solely through the electronic density response function $\chi(q,\omega)$ defined via
-% \ba
-% \rho_{ind}(q,\omega) = e^2 \chi(q,\omega) \phi_{ext}(q,\omega)\,\,\,.
-% \ea
-% Using the linear response of the material,
-% \ba
-% \rho_{ind}(q,\omega) = -\frac{2\pi e^3}{q^2 \e_0}\delta(\omega-q\cdot v)\,\chi(q,\omega)
-% \ea
-% so that the induced potential is
-% \ba
-% \phi_{ind}(q,\omega) = -\frac{2\pi}{e}\,\delta(\omega-q\cdot v)\lp\frac{e^2}{q^2\e_0}\rp^2\chi(q,\omega)\,\,\,.
-% \ea
-% The relation between the induced electric field $E_{ind}$ and the induced potential $\phi_{ind}$ is the usual one
-% \ba
-% E_{ind}=-iq\, \phi_{ind}(q,\omega)
-% \ea
-% so that
-% \ba
-% \re E_{ind}(q,\omega)
-% =
-% q\im \phi_{ind}(q,\omega)
-% =
-% -q\,\lb\frac{2\pi}{e}\,\delta(\omega-q\cdot v)\lp\frac{e^2}{q^2\e_0}\rp^2\chi''(q,\omega)\rb\,\,\,.
-% \ea
-% Above, the notation is severely suppressed so that $q$ is the vector whose direction provides the vector nature of $E$ and $\chi''$ is defined as the imaginary part of $\chi$:
-% \ba
-% \chi(q,\omega)=: \chi'(q,\omega)+i\chi''(q,\omega)\,\,\,.
-% \ea
-% Returning to the work calculation \eqref{Eind work},
-% \ba
-% W &=&
-% 2\int\frac{d^3 q}{(2\pi)^2} \int_0^\infty d\omega\, \lb \delta(\omega-q\cdot v)\rb^2
-% \lp\frac{e^2}{\e_0 q^2}\rp^2
-% \lp v\cdot q\rp\chi''(q,\omega)\,\,\,.
-% \ea
-% The squared delta function is not particularly kind to work with; however, I believe it has a simple interpretation.  The delta function must have units so that 
-% \ba
-% \int d\omega \delta(\omega-v\cdot q) = 1
-% \ea
-% or, in other words, takes on units of time.  Using one of these delta functions sets the other's argument to zero, which can be thought of as a time volume factor
-% \ba
-% T_V = \delta(\omega-v\cdot q)_{\omega-v\cdot q=0} = \int \frac{dt}{2\pi}\,\,\,.
-% \ea
-% This overall time volume factor is, of course, an infinite time scale which implies the work done along this classical trajectory diverges.  Physically speaking, this completely sensible as the electron trajectory is infinite, completely within the bulk of the material, and will surely suffer an energy loss proportionate to the time spent within the material.  It is in the interest of obtaining a finite quantity that the {\it stopping power}, or work per unit time, should be considered when calculating bulk losses.  {\it Note:  In the case of surface losses, the energy loss along the classical trajectory is finite as a result of decaying induced fields far from the surface and little (if any) time spent inside the material.}  Dividing out the temporal volume $T_V$, the stopping power along the classical transmission trajectory is
-% \ba
-% \frac{W}{T_V} &=&
-% 2 \int\frac{d^3 q}{(2\pi)^2} \int_0^\infty d\omega\, \delta(\omega-q\cdot v)
-% \lp\frac{e^2}{\e_0 q^2}\rp^2
-% \lp v\cdot q\rp \chi''(q,\omega)\,\,\,.
-% \ea
-% The process which can be easily related to a real transmission EELS experiment is one in which the electron trajectory is aligned along the beam direction, which is itself aligned along a crystallographic axis $\hat i$ so that $v=v_i\hat i$.  Unlike the surface scattering analysis, $\hat z$ is not necessarily along the optical axis, but some generic direction.  The delta function then becomes
-% \ba
-% \delta(\omega-v\cdot q)=\delta(\omega-v_i q_i) = \frac{1}{v_z}\delta(q_i-\omega/v_i)
-% \ea
-% so that the stopping power is
-% \ba
-% \frac{W}{T_V} &=&
-% 2 \int\frac{d^3 q}{(2\pi)^2} \int_0^\infty d\omega\, \lb \frac{1}{v_i}\delta(q_i-\omega/v_i)\rb
-% \lp\frac{e^2}{\e_0 q^2}\rp^2
-% \lp v_i q_i\rp \chi''(q,\omega)
-% \\ &=&
-% \frac{2}{v_z}\int\frac{d^2 q_\perp}{(2\pi)^2} \int_0^\infty d\omega\,\omega
-% \lb \lp\frac{e^2}{\e_0\lb q_\perp^2+q_i^2\rb}\rp^2 \chi''(q_\perp,q_i,\omega) \rb_{q_i=\omega/v_i}\,\,\,.
-% \ea
-% This notation is distinct from the surface scattering analysis, where $q_\parallel$ is the in-plane momentum transfer parallel to the material surface.  In the bulk analysis $q_i$ is parallel to the electron beam, which is {\it perpendicular} to the material surface of a thin film that might be used in  a transmission EELS experiment.  It is the momentum transfer $q_\perp$ that lies in the surface plane of a thin film perpendicular to the electron beam.  
-% \\
+By considering a classical transmission trajectory without reflection
+\ba
+r(t) = v t
+\ea
+for an electron with constant vector velocity $v$, the work done along this trajectory by the induced electric field $E_{ind}$ can be straightforwardly written as
+\ba
+W = -e v\cdot\int dt\, E_{ind}(r(t),t)\,\,\,.
+\ea
+The desired classical probability distribution $P(q_\parallel,\omega)$ is obtained in the usual way through writing the work in terms of its Fourier modes
+\ba
+W=\int \frac{d^2 q_\parallel}{(2\pi)^2} \int_0^\infty d\omega\, \hbar\omega P(q_\parallel,\omega)\,\,\,.
+\ea 
+Despite being a bulk transmission calculation, whose cross section is typically written in terms of a 3D momentum $q=(q_\parallel,q_z)$, energy and momentum conservation of the electron kinematics imply the additional constraint $\omega=v_\parallel\cdot q_\parallel +v_z q_z$.  This kinematical constraint means at least one momentum degree of freedom must vary with the energy loss.  Without loss of generality, and focusing on the experimental reality in which the inelastic contribution is aligned along the "$z$" direction, the probability distribution $P(q_\parallel,\omega)$ is oriented to choose
+\ba
+q_z=q_z(\omega)\approx \omega-v_\parallel\cdot q_\parallel
+\ea
+with $(q_\parallel,\omega)$ fixed.  Performing the necessary Fourier transforms,
+\ba
+W &=&
+-ev\cdot\int \frac{d\omega d^3 q}{(2\pi)^4} dt\, e^{-i\omega t} e^{iq\cdot v t} E_{ind}(q,\omega)
+\\ &=&
+-ev\cdot\int\frac{d^3 q dt}{(2\pi)^4} \int_0^\infty d\omega\lb
+ e^{-i\omega t} e^{iq\cdot v t} E_{ind}(q,\omega)
+ +
+  e^{i\omega t} e^{iq\cdot v t} E_{ind}(q,-\omega)
+\rb
+\\(t,q)\to(-t,-q) &=&
+-ev\cdot\int\frac{d^3 q dt}{(2\pi)^4} \int_0^\infty d\omega e^{i(q\cdot v-\omega)t}\lb
+E_{ind}(q,\omega)
++ E_{ind}(-q,-\omega)
+\rb
+\\ &=&
+-2ev\cdot\int\frac{d^3 q dt}{(2\pi)^4} \int_0^\infty d\omega e^{i(q\cdot v-\omega)t}\,\re E_{ind}(q,\omega)
+\\ \label{Eind work} &=&
+-2ev\cdot\int\frac{d^3 q}{(2\pi)^3} \int_0^\infty d\omega\, \delta(\omega-q\cdot v)\, \re E_{ind}(q,\omega)\,\,\,.
+\ea
+Now all that's required is the induced electric field {\it inside} the material due to the electron along its trajectory.  The density,
+\ba
+\rho_e(r,t) &=&
+-e\delta^3(r-r(t))=-e\delta^3(r-vt)
+\\
+\rho_e(q,\omega) &=&
+-e\int dt d^3 r e^{i\omega t} e^{-iq\cdot r} \delta^3(r-vt)
+=
+-e\int dt e^{i(\omega-q\cdot v)t}
+\\ &=& -2\pi e\delta(\omega-q\cdot v)
+\ea
+can be combined with the Poission equation to find the external potential
+\ba
+\phi_{ext}(q,\omega) = -\frac{2\pi e}{q^2 \e_0}\delta(\omega-q\cdot v)\,\,\,.
+\ea
+The linear response input is solely through the electronic density response function $\chi(q,\omega)$ defined via
+\ba
+\rho_{ind}(q,\omega) = e^2 \chi(q,\omega) \phi_{ext}(q,\omega)\,\,\,.
+\ea
+Using the linear response of the material,
+\ba
+\rho_{ind}(q,\omega) = -\frac{2\pi e^3}{q^2 \e_0}\delta(\omega-q\cdot v)\,\chi(q,\omega)
+\ea
+so that the induced potential is
+\ba
+\phi_{ind}(q,\omega) = -\frac{2\pi}{e}\,\delta(\omega-q\cdot v)\lp\frac{e^2}{q^2\e_0}\rp^2\chi(q,\omega)\,\,\,.
+\ea
+The relation between the induced electric field $E_{ind}$ and the induced potential $\phi_{ind}$ is the usual one
+\ba
+E_{ind}=-iq\, \phi_{ind}(q,\omega)
+\ea
+so that
+\ba
+\re E_{ind}(q,\omega)
+=
+q\im \phi_{ind}(q,\omega)
+=
+-q\,\lb\frac{2\pi}{e}\,\delta(\omega-q\cdot v)\lp\frac{e^2}{q^2\e_0}\rp^2\chi''(q,\omega)\rb\,\,\,.
+\ea
+Above, the notation is severely suppressed so that $q$ is the vector whose direction provides the vector nature of $E$ and $\chi''$ is defined as the imaginary part of $\chi$:
+\ba
+\chi(q,\omega)=: \chi'(q,\omega)+i\chi''(q,\omega)\,\,\,.
+\ea
+Returning to the work calculation \eqref{Eind work},
+\ba
+W &=&
+2\int\frac{d^3 q}{(2\pi)^2} \int_0^\infty d\omega\, \lb \delta(\omega-q\cdot v)\rb^2
+\lp\frac{e^2}{\e_0 q^2}\rp^2
+\lp v\cdot q\rp\chi''(q,\omega)\,\,\,.
+\ea
+The squared delta function is not particularly kind to work with; however, I believe it has a simple interpretation.  The delta function must have units so that 
+\ba
+\int d\omega \delta(\omega-v\cdot q) = 1
+\ea
+or, in other words, takes on units of time.  Using one of these delta functions sets the other's argument to zero, which can be thought of as a time volume factor
+\ba
+T_V = \delta(\omega-v\cdot q)_{\omega-v\cdot q=0} = \int \frac{dt}{2\pi}\,\,\,.
+\ea
+This overall time volume factor is, of course, an infinite time scale which implies the work done along this classical trajectory diverges.  Physically speaking, this completely sensible as the electron trajectory is infinite, completely within the bulk of the material, and will surely suffer an energy loss proportionate to the time spent within the material.  It is in the interest of obtaining a finite quantity that the {\it stopping power}, or work per unit time, should be considered when calculating bulk losses.  {\it Note:  In the case of surface losses, the energy loss along the classical trajectory is finite as a result of decaying induced fields far from the surface and little (if any) time spent inside the material.}  Dividing out the temporal volume $T_V$, the stopping power along the classical transmission trajectory is
+\ba
+\frac{W}{T_V} &=&
+2 \int\frac{d^3 q}{(2\pi)^2} \int_0^\infty d\omega\, \delta(\omega-q\cdot v)
+\lp\frac{e^2}{\e_0 q^2}\rp^2
+\lp v\cdot q\rp \chi''(q,\omega)\,\,\,.
+\ea
+The process which can be easily related to a real transmission EELS experiment is one in which the electron trajectory is aligned along the beam direction, which is itself aligned along a crystallographic axis $\hat i$ so that $v=v_i\hat i$.  Unlike the surface scattering analysis, $\hat z$ is not necessarily along the optical axis, but some generic direction.  The delta function then becomes
+\ba
+\delta(\omega-v\cdot q)=\delta(\omega-v_i q_i) = \frac{1}{v_z}\delta(q_i-\omega/v_i)
+\ea
+so that the stopping power is
+\ba
+\frac{W}{T_V} &=&
+2 \int\frac{d^3 q}{(2\pi)^2} \int_0^\infty d\omega\, \lb \frac{1}{v_i}\delta(q_i-\omega/v_i)\rb
+\lp\frac{e^2}{\e_0 q^2}\rp^2
+\lp v_i q_i\rp \chi''(q,\omega)
+\\ &=&
+\frac{2}{v_z}\int\frac{d^2 q_\perp}{(2\pi)^2} \int_0^\infty d\omega\,\omega
+\lb \lp\frac{e^2}{\e_0\lb q_\perp^2+q_i^2\rb}\rp^2 \chi''(q_\perp,q_i,\omega) \rb_{q_i=\omega/v_i}\,\,\,.
+\ea
+This notation is distinct from the surface scattering analysis, where $q_\parallel$ is the in-plane momentum transfer parallel to the material surface.  In the bulk analysis $q_i$ is parallel to the electron beam, which is {\it perpendicular} to the material surface of a thin film that might be used in  a transmission EELS experiment.  It is the momentum transfer $q_\perp$ that lies in the surface plane of a thin film perpendicular to the electron beam.  
+\\
 
-% By extending the definition of the classical energy loss distribution $P(q,\omega)$ to its analogous stopping power variant, the energy loss distribution is identified as
-% \ba
-% P(q_\perp,\omega) = \frac{2}{\hbar v_i}\lb \lp\frac{e^2}{\e_0\lb q_\perp^2+q_i^2\rb}\rp^2 \chi''(q_\perp,q_i,\omega) \rb_{q_i=\omega/v_i}\,\,\,.
-% \ea
-% In transmission experiments, very high energy ($\sim 100$ keV) electrons are used so that $\omega/v_i$ is negligible relative to any finite $q_\perp$ up to the tens of eV relevant to typical plasmon studies.  A practical evaluation, then, is to set $q_i=0$ in the expression.  A typical transmission EELS experiment will then be incapable of resolving the acoustic-optical bulk plasmon continuum when the electron beam is perpendicular to the easily-cleaved planar axis of a layered system; i.e., $q_i=0$ is along the layer stacking direction and so only the optical plasmon can be resolved.
+By extending the definition of the classical energy loss distribution $P(q,\omega)$ to its analogous stopping power variant, the energy loss distribution is identified as
+\ba
+P(q_\perp,\omega) = \frac{2}{\hbar v_i}\lb \lp\frac{e^2}{\e_0\lb q_\perp^2+q_i^2\rb}\rp^2 \chi''(q_\perp,q_i,\omega) \rb_{q_i=\omega/v_i}\,\,\,.
+\ea
+In transmission experiments, very high energy ($\sim 100$ keV) electrons are used so that $\omega/v_i$ is negligible relative to any finite $q_\perp$ up to the tens of eV relevant to typical plasmon studies.  A practical evaluation, then, is to set $q_i=0$ in the expression.  A typical transmission EELS experiment will then be incapable of resolving the acoustic-optical bulk plasmon continuum when the electron beam is perpendicular to the easily-cleaved planar axis of a layered system; i.e., $q_i=0$ is along the layer stacking direction and so only the optical plasmon can be resolved.
 
 
 
@@ -899,16 +830,7 @@ Need a bibliography call to avoid errors with the SciPost template: \cite{Mills1
 
 
 
-
-
-
-
-
-
-
+\bibliographystyle{unsrt}
 \bibliography{mybib/mybib.bib}
-
-
-\nolinenumbers
 
 \end{document}
