@@ -1,0 +1,190 @@
+\subsection{The superlattice screening response}
+
+Let's now perturb the superlattice by a charge density with a plane wave profile,
+\begin{equation}
+    \label{rho ext}
+    \rho_{ext}(q,\omega,z) = \rho_0(q,Q,\omega) e^{i Q z}
+    \,\,\,,
+\end{equation}
+which sources Gauss's law as
+\begin{equation}
+    \label{perturbation Gauss law}
+    -\lb\partial_z^2-q^2\rb\phi(q,z,\omega) = \frac{\rho_0(q,Q,\omega)}{\e\e_0} e^{i Q z}
+    \,\,\,.
+\end{equation}
+The particular solution to \eqref{perturbation Gauss law} is given by
+\begin{equation}
+    \label{phi ext def}
+    \phi_{ext}(q,z,\omega) = \phi_0(q,Q,\omega)\, e^{i Q z}
+    \,\,\,,
+\end{equation}
+where we've defined
+\begin{equation}
+    \label{phi0 def}
+    \phi_0(q,Q,\omega) := \frac{\rho_0(q,Q,\omega)}{\e\e_0\lp q^2+Q^2\rp}
+    \,\,\,.
+\end{equation}
+Notably, the solution \eqref{phi ext def} is already continuous, which means it will not contribute to the constraint enforcing continuity of the total potential in \eqref{unperturbed BC1}.  If we examine the discontinuity across $z=(n+1)a$ as written in \eqref{superlattice discont init}, we see that $\bar\sigma$ multiplies the {\it total} potential $\phi$ at $z=(n+1)a$, not just the homogeneous part.  Including the perturbing potential \eqref{phi ext def} in the discontinuity boundary condition, we have
+\begin{align}
+    \label{perturbed BC1 expression}
+    f \phi_{n-} + f^{-1}\phi_{n+} &= \phi_{(n+1)-} + \phi_{(n+1)+}
+    \,\,\,,
+    \\
+    \label{perturbed BC2 expression}
+    f \phi_{n-} - f^{-1}\phi_{n+} &= (1-\bar\sigma)\phi_{(n+1)-}-(1+\bar\sigma)\phi_{(n+1)+} - \bar\sigma \phi_0 e^{i Q(n+1)a}
+    \,\,\,\,,
+\end{align}
+where we've suppressed explicit $q$, $Q$, and $\omega$ dependence of the various coefficients.  As written, the boundary conditions \eqref{perturbed BC1 expression} and \eqref{perturbed BC2 expression} depend on the layer index $n$, but we can remove this dependence by further scaling the $\phi_{n\pm}$ beyond \eqref{nth layer phi} via
+\begin{equation}
+    \label{Q scaled phi pm}
+    \phi_{n\pm}(q,Q,\omega) =: \bar\phi_{n\pm}(q,Q,\omega) \phi_0(q,Q,\omega) e^{i Q n a}
+    \,\,\,.
+\end{equation}
+In terms of the dimensionless $\bar\phi_{n\pm}$ \eqref{Q scaled phi pm}, the boundary conditions across $z=(n+1)a$ are now
+\begin{align}
+    \label{perturbed BC1}
+    bf \bar\phi_{n-} + bf^{-1}\bar\phi_{n+} &= \bar\phi_{(n+1)-} + \bar\phi_{(n+1)+}
+    \,\,\,,
+    \\
+    \label{perturbed BC2}
+    bf \bar\phi_{n-} - bf^{-1}\bar\phi_{n+} &= (1-\bar\sigma)\bar\phi_{(n+1)-}-(1+\bar\sigma)\bar\phi_{(n+1)+} - \bar\sigma
+    \,\,\,\,,
+\end{align}
+where we've additionally defined
+\begin{equation}
+    \label{b def}
+    b(Q):=e^{-i Q a}
+    \,\,\,.
+\end{equation}
+
+The coefficients between layers are no longer directly proportional due to the altered boundary conditions in \eqref{perturbed BC1} and \eqref{perturbed BC2}; nevertheless, we can still write the boundary conditions as a matrix equation,
+\begin{equation}
+    \label{perturbed matrix BC}
+    bM\ket{\bar\phi_n} = N\ket{\bar \phi_{n+1}}
+    -
+    \bpm
+    0
+    \\
+    \bar\sigma
+    \epm
+    \,\,\,.
+\end{equation}
+Going from the $n$th to the $(n+1)$th layer can now be accomplished via
+\begin{equation}
+    \label{forward T relation}
+    \ket{\bar\phi_{n+1}}
+    =
+    bT\ket{\bar\phi_n}+\ket r
+    \,\,\,,
+\end{equation}
+where we've defined the remainder term:
+\begin{equation}
+    \label{r def}
+    \ket r := N^{-1}\bpm
+    0
+    \\
+    \bar\sigma
+    \epm
+    \,\,\,.
+\end{equation}
+By induction, repeated application of \eqref{forward T relation} provides
+\begin{equation}
+    \label{forward j T relation}
+    \ket{\bar\phi_{n+j}} = b^j T^j\ket{\bar\phi_{n}} + \sum_{m=0}^{j-1} b^m T^m\ket r
+    \,\,\,,
+\end{equation}
+where $j\ge1$.  Similarly, we can go backwards from the $n$th layer to the $(n-1)$th layer via
+\begin{equation}
+    \label{backward T relation}
+    \ket{\bar\phi_{n-1}} = b^{-1}T^{-1}\ket{\bar\phi_{n}} + \ket d
+    \,\,\,,
+\end{equation}
+where we've defined a distinct remainder term:
+\begin{equation}
+    \label{d def}
+    \ket d:=M^{-1}
+    \bpm
+    0
+    \\
+    -b^{-1}\bar\sigma
+    \epm
+    \,\,\,.
+\end{equation}
+Analogously, we find that repeated application of \eqref{backward T relation} provides
+\begin{equation}
+    \label{backward j T relation}
+    \ket{\bar\phi_{n-j}}
+    =
+    b^{-j} T^{-j}\ket{\bar\phi_n} +\sum_{m=0}^{j-1}b^{-m}T^{-m}\ket d
+    \,\,\,,
+\end{equation}
+where $j\ge1$.
+
+In order to enforce boundary conditions, it's convenient to work in the eigenvector basis, where we decompose the $\ket{\bar\phi_n}$ as
+\begin{equation}
+    \label{eigen decomp phi}
+    \ket{\bar\phi_n}=:\bar\phi_{n t_-}\ket{t_-} + \bar\phi_{nt_+}\ket{t_+}
+\end{equation}
+and $\ket r$ as
+\begin{equation}
+    \label{eigen decomp r}
+    \ket r =: r_-\ket{t_-}+r_+\ket{t_+}
+    \,\,\,.
+\end{equation}
+The geometric formula,
+\begin{equation}
+    \label{geometric series}
+    \sum_{m=0}^{j-1} x^m = \frac{1-x^j}{1-x}
+    \,\,\,,
+\end{equation}
+allows us to write \eqref{forward j T relation} as
+\begin{equation}
+    \label{forward j T eigen}
+    \ket{\bar\phi_{n+j}} = 
+    \lp 
+    b^j \tau_-^j\bar\phi_{nt_-} + r_-\frac{1-b^j\tau_-^j}{1-b\tau_-}
+    \rp\ket{t_-}
+    +
+    \lp
+    b^j\tau_+^j\bar\phi_{nt_+}+r_+\frac{1-b^j\tau_+^j}{1-b\tau_+}
+    \rp\ket{t_+}
+    \,\,\,.
+\end{equation}
+Since $|\tau_-|<1$ and $|b|=1$ from \eqref{b def}, the terms within the first parentheses of \eqref{forward j T eigen} remain bounded as $j\to\infty$ ($z\to\infty$); the terms within the second parentheses, however, diverge since $|\tau_+|>1$.  In order for the potential to remain bounded as $z\to\infty$, the coefficient of the exponentially growing term must vanish, which provides the constraint
+\begin{equation}
+    \label{forward BC}
+    \bar\phi_{nt_+}=\frac{r_+}{1-b\tau_+}
+    \,\,\,.
+\end{equation}
+Similarly, we can decompose the remainder $\ket d$ in the eigenvector basis,
+\begin{equation}
+    \label{eigen decomp d}
+    \ket d=:d_-\ket{t_-} + d_+\ket{t_+}
+    \,\,\,,
+\end{equation}
+and use the geometric formula \eqref{geometric series} to write \eqref{backward j T relation} as
+\begin{equation}
+    \label{backward j T eigen}
+    \ket{\bar\phi_{n-j}} = 
+    \lp
+    b^{-j}\tau_-^{-j}\bar\phi_{nt_-} + d_- \frac{1-b^{-j}\tau_-^{-j}}{1-b^{-1}\tau_-^{-1}}
+    \rp
+    \ket{t_-}
+    +
+    \lp
+    b^{-j}\tau_+^{-j}\bar\phi_{nt_+}
+    +
+    d_+\frac{1-b^{-j}\tau_+^{-j}}{1-b^{-1}\tau_+^{-1}}
+    \rp
+    \ket{t_+}
+    \,\,\,.
+\end{equation}
+Upon inverting the eigenvalue inequalities in \eqref{eigenvalue relation} and recalling the unimodularity condition \eqref{unimodular eigenvalues}, $|\tau_-^{-1}|=|\tau_+|>1$ causes the terms within the first parentheses of \eqref{backward j T eigen} to diverge as $j\to\infty$ ($z\to-\infty$); since $|\tau_+^{-1}|=|\tau_-|<1$, the terms within the second parentheses are unaffected.  In order for the potential to remain bounded as $z\to-\infty$, we must have that
+\begin{equation}
+    \label{backward BC}
+    \bar\phi_{nt_-} = \frac{d_-}{1-b^{-1}\tau_-^{-1}} = \frac{d_-}{1-b^{-1}\tau_+}
+    \,\,\,.
+\end{equation}
+Through the eigenvector decompositions for $\ket{\bar\phi_n}$ \eqref{eigen decomp phi}, $\ket r$ \eqref{eigen decomp r}, and $\ket d$ \eqref{eigen decomp d}, the boundedness constraints in \eqref{forward BC} and \eqref{backward BC} totally determine the $\ket{\bar\phi_n}$ and subsequently the potential within the entire superlattice.
+
+\note{Next}: Fourier transform this solution along the $z$-direction so that $\chi$ can be extracted from \eqref{planar phi to phi ext relation}.  In particular, the long wavelength response to a long wavelength perturbation is a scalar relationship with $G,G'=0$ fixed.

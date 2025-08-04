@@ -1,0 +1,205 @@
+\subsection{The unperturbed superlattice}
+
+A superlattice made up of layered 2D conducting planes can be defined by the inter-layer spacing $a$, the background dielectric constant $\e$, and the planar conductivity $\sigma(q,\omega)$ at each plane.\footnote{Moving forward, $q$ is a planar wavevector and the capitalized $Q$ will refer to an out-of-plane wavevector.}  The screening response of the superlattice (beyond the background dielectric constant) is entirely encoded within the electrostatic boundary conditions across each conducting plane.\footnote{I.e., we're strictly considering the non-retarded limit.}  After taking the Fourier transform along the planar directions, we have that the potential $\phi$ must be continuous,
+\begin{equation}
+    \label{phi continuity}
+    \lim_{z\to z_0^-}\phi(q,z) = \lim_{z\to z_0^+}\phi(q,z)
+    \,\,\,,
+\end{equation}
+across any boundary and that the discontinuity in the normal derivative of the displacement potential ($\phi_D = \e\phi$) across a conducting plane located at $z=z_0$ is due to the (planar) conducting charge density $\rho$,
+\begin{equation}
+    \label{phi discontinuity expression}
+    \lim_{z\to z_0^-}\partial_z\phi(q,z) - \lim_{z\to z_0^+}\partial_z\phi(q,z) = \frac{\rho(q)}{\e\e_0}
+    \,\,\,.
+\end{equation}
+The continuity equation,
+\begin{equation}
+\label{continuity equation}
+    -i\omega\rho(q,\omega) +iq\cdot j(q,\omega) = 0
+    \,\,\,,
+\end{equation}
+allows us to relate the planar (or sheet) current density $j$ to the planar charge density $\rho$.  Along a conducting plane located at $z=z_0$, the definition of the planar conductivity $\sigma$ provides
+\begin{equation}
+    \label{conductivity def}
+    j(q,\omega) = \sigma(q,\omega) E_\parallel(q,\omega,z_0) = \sigma(q,\omega) \lb -i q\rb\phi(q,\omega,z_0)
+    \,\,\,,
+\end{equation}
+where we note the (2D) vector nature of the planar wavevector $q$.  The continuity equation \eqref{continuity equation} then determines the (induced) planar charge density $\rho$ in terms of $\sigma$ as
+\begin{equation}
+\label{charge density conductivity relation}
+\rho(q,\omega) =
+\lb\frac{q^2\sigma(q,\omega)}{i\omega}\rb\,\phi(q,\omega,z_0)
+\,\,\,.
+\end{equation}
+Since the continuity of $\phi$ \eqref{phi continuity} guarantees the uniqueness of $\phi(q,z_0)$, we can re-write the discontinuity of the normal derivative across a conducting plane \eqref{phi discontinuity expression} through \eqref{charge density conductivity relation} as
+\begin{equation}
+    \label{phi discontinuity in terms of phi no bar sigma}
+    \lim_{z\to z_0^-}\partial_z\phi(q,\omega,z) - \lim_{z\to z_0^+}\partial_z\phi(q,\omega,z) = \lb\frac{q^2\sigma(q,\omega)}{i\omega\e\e_0}\rb\,\phi(q,\omega,z_0)
+    \,\,\,.
+\end{equation}
+As a matter of convenience, we define the dimensionless quantity $\bar\sigma$,
+\begin{equation}
+    \label{bar sigma def}
+    \bar\sigma(q,\omega):=
+    \frac{|q|\sigma(q,\omega)}{i\omega\e\e_0}
+    \,\,\,,
+\end{equation}
+so that \eqref{phi discontinuity in terms of phi no bar sigma} becomes
+\begin{equation}
+    \label{phi discontinuity in terms of phi}
+    \lim_{z\to z_0^-}\partial_z\phi(q,\omega,z) - \lim_{z\to z_0^+}\partial_z\phi(q,\omega,z) = |q|\bar\sigma(q,\omega)\phi(q,\omega,z_0)
+    \,\,\,.
+\end{equation}
+
+The only free charges\footnote{Here and throughout, ``free charges" are relative to whatever bound charge makes up the dielectric background.  All charges not accounted for by the dielectric screening in $\e$ are ``free" in this sense, including the conducting charge density along each plane and any external charge density perturbing the superlattice.} in the (unperturbed) superlattice are confined to the conducting planes; as a result, the potential within each layer is a homogeneous solution to Gauss's law,
+\begin{equation}
+    \label{unsourced Gauss}
+    -\lb\partial_z^2-q^2\rb\phi(q,\omega,z) = 0
+    \,\,\,.
+\end{equation}
+The general solution to \eqref{unsourced Gauss} is a sum of growing and decaying modes,
+\begin{equation}
+    \label{phi homogeneous}
+    \phi(q,\omega,z) = \phi_-(q,\omega) e^{-|q|z} + \phi_+(q,\omega) e^{+|q|z}
+    \,\,\,,
+\end{equation}
+where the $\phi_\pm$ within each layer must be fixed by boundary conditions.  As a matter of bookkeeping, we center one of the conducting planes along $z=0$ and refer to the layer between $z=na$ and $z=(n+1)a$ as the $n$th layer.  Since the structure of the homogeneous solution \eqref{phi homogeneous} is universal to the layers, we can re-scale the $\phi_{\pm}$ within each layer so that
+\begin{equation}
+    \label{nth layer phi}
+    na<z<(n+1)a\implies
+    \phi(q,\omega,z) = \phi_{n-}(q,\omega) e^{-|q|(z-na)} + \phi_{n+}(q,\omega)e^{+|q|(z-na)}
+    \,\,\,.
+\end{equation}
+We can now write the boundary conditions across the conducting plane at $z=(n+1)a$ as
+\begin{equation}
+    \label{superlattice cont init}
+    e^{-|q|a} \phi_{n-}(q,\omega) + e^{+|q|a}\phi_{n+}(q,\omega) = 
+    \phi_{(n+1)-}(q,\omega)+\phi_{(n+1)+}(q,\omega)
+\end{equation}
+and
+\begin{equation}
+    \label{superlattice discont init}
+    e^{-|q|a} \phi_{n-}(q,\omega) - e^{+|q|a}\phi_{n+}(q,\omega) = 
+    \phi_{(n+1)-}(q,\omega)-\phi_{(n+1)+}(q,\omega)
+    -
+    \bar\sigma(q,\omega)\phi\big(q,z=(n+1)a\big)
+    .
+\end{equation}
+The continuity of $\phi$ across an interface allows us to use either layer's coefficients to enumerate the potential at $z=(n+1)a$; choosing the coefficients of the $(n+1)$th layer, we have that \eqref{superlattice discont init} becomes
+\begin{equation}
+    \label{superlattice discont init expression}
+    e^{-|q|a} \phi_{n-}(q,\omega) - e^{+|q|a}\phi_{n+}(q,\omega) = 
+   \lb1-\bar\sigma(q,\omega)\rb \phi_{(n+1)-}(q,\omega)-\lb1+\bar\sigma(q,\omega)\rb \phi_{(n+1)+}(q,\omega)
+   \,.
+\end{equation}
+To simplify the notation, we suppress explicit $q$ and $\omega$ dependence in all quantities so that we can write the boundary conditions as
+\begin{align}
+    \label{unperturbed BC1}
+    f \phi_{n-} + f^{-1}\phi_{n+} &= \phi_{(n+1)-} + \phi_{(n+1)+}
+    \,\,\,,
+    \\
+    \label{unperturbed BC2}
+    f \phi_{n-} - f^{-1}\phi_{n+} &= (1-\bar\sigma)\phi_{(n+1)-}-(1+\bar\sigma)\phi_{(n+1)+}
+    \,\,\,\,,
+\end{align}
+where we've defined
+\begin{equation}
+    \label{f def}
+    f(q):=e^{-|q|a}
+    \,\,\,.
+\end{equation}
+The payoff for re-scaling coefficients in \eqref{nth layer phi} is that we've  removed any layer dependence in the boundary conditions \eqref{unperturbed BC1} and \eqref{unperturbed BC2}: the coefficients of each layer are related to the next in the same way.
+
+The unperturbed superlattice is amenable to a transfer matrix treatment since the boundary conditions \eqref{unperturbed BC1} and \eqref{unperturbed BC2} are linear relations between the unknown $\phi_{n\pm}$ within one layer and the $\phi_{(n+1)\pm}$ of the next.  Defining a vector of the unknown coefficients in each layer through
+\begin{equation}
+    \label{phi vec def}
+    \ket{\phi_n}:=\bpm
+    \phi_{n-}
+    \\\
+    \phi_{n+}
+    \epm
+    \,\,\,,
+\end{equation}
+we can re-write the boundary conditions \eqref{unperturbed BC1} and \eqref{unperturbed BC2} as a matrix equation,
+\begin{equation}
+    \label{matrix BC}
+    M\ket{\phi_n}= N\ket{\phi_{n+1}}
+    \,\,\,,
+\end{equation}
+where we've defined the matrices
+\begin{equation}
+    \label{M def}
+    M:=\bpm
+    f & f^{-1}
+    \\
+    f & -f^{-1}
+    \epm
+\end{equation}
+and
+\begin{equation}
+    \label{N def}
+    N:=
+    \bpm
+    1 & 1
+    \\
+    (1-\bar\sigma) & -(1+\bar \sigma)
+    \epm
+    \,\,\,.
+\end{equation}
+It's easy to see that 
+\begin{equation}
+    \label{M and N det}
+    \det M = \det N = -2
+    \,\,\,,
+\end{equation}
+which allows us to freely invert $M$ and $N$ to define the transfer matrix,
+\begin{equation}
+    \label{T def}
+    T:= N^{-1} M
+    \,\,\,,
+\end{equation}
+with inverse
+\begin{equation}
+    \label{T inv def}
+    T^{-1} = M^{-1} N
+    \,\,\,.
+\end{equation}
+The transfer matrix \eqref{T def} provides the $(n+1)$th layer's coefficients in terms of the preceding layer,
+\begin{equation}
+    \label{T action}
+    T\ket{\phi_n} = \ket{\phi_{n+1}}
+    \,\,\,,
+\end{equation}
+and vice versa through its inverse \eqref{T inv def},
+\begin{equation}
+    \label{T inv action}
+    T^{-1}\ket{\phi_{n+1}} = \ket{\phi_n}
+    \,\,\,.
+\end{equation}
+Given the growing/decaying homogeneous coefficients within one layer, we can then determine the potential within the entire superlattice.
+
+While it may at first seem like a technicality, it's physically significant that the determinants of $M$ and $N$ in \eqref{M and N det} cause $T$ as defined in \eqref{T def} to be {\it unimodular}:
+\begin{equation}
+    \label{T det}
+    \det T =1
+    \,\,\,.
+\end{equation}
+As a unimodular matrix, $T$ must have two (possibly degenerate) non-zero eigenvalues $\tau_{\pm}$ that multiply to unity:
+\begin{equation}
+    \label{unimodular eigenvalues}
+    \tau_+\tau_- = 1
+    \,\,\,.
+\end{equation}
+If we consider the possibility that either of the $|\tau_\pm|=1$ at real-valued $q$ and $\omega$, then the superlattice would support infinitely propagating electrostatic modes without attenuation.\footnote{This is the case, for example, when using a dissipationless, free electron conductivity along the conducting planes.  The resulting plasma modes are unphysical in that they never decay.  Nevertheless, the dissipative corrections to the plasmon dispersion in good metals (e.g., Aluminum) are small due to the relatively long scattering lifetimes.}  In a physical system with dissipation, however, such modes must decay on a finite length scale, which enables us to uniquely label the $\tau_\pm$ according to
+\begin{equation}
+    \label{eigenvalue relation}
+    |\tau_-|<1<|\tau_+|
+    \,\,\,.
+\end{equation}
+The eigenvectors $\ket{t_\pm}$,
+\begin{equation}
+    \label{eigenvector def}
+    T\ket{t_\pm} = \tau_\pm\ket{t_\pm}
+    \,\,\,,
+\end{equation}
+then provide a basis for growing and decaying modes in the superlattice.
