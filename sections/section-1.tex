@@ -1,0 +1,80 @@
+\section{The electromagnetic framework}
+\label{section: electromagnetic framework}
+
+The benefit of the electromagnetic framework is that one can infer the electronic response of the material from a purely electromagnetic calculation of the electric potential in a material perturbed by an external charge density.  By working with a theory of potentials and charge densities, we are implicitly restricting our study to the non-relativistic, non-retarded limit; in terms of the wavevector $q$ and frequency $\omega$ of excitations under consideration, this translates to the regime $q^2\gg \omega^2/c^2$.  The perturbing field $\phi_{ext}$ in an electromagnetic analysis is chosen for convenience, since its role is to generate the desired material response.  Given a particular $\phi_{ext}$, we work backwards by characterizing the many-electron screening of the material through the action of the electronic density response function $\chi$,\footnote{I.e., we are ignoring ionic contributions to the electromagnetic screening response.  This neglected response would nevertheless contribute to charge density probes like EELS.}
+\begin{equation}
+    \label{real space chi def}
+    \rho_{ind}(r,t) = e^2\int d^3 r' dt' \chi(r,r';t-t')\phi_{ext}(r',t')
+    \,\,\,,
+\end{equation}
+where $\rho_{ind}$ is the electronic charge density induced by the externally-sourced electric potential $\phi_{ext}$.  The induced charge density \eqref{real space chi def} sources the material screening field $\phi_{ind}$ through Gauss's law, which has the Fourier components
+\begin{equation}
+    \label{Fourier phi ind}
+    \phi_{ind}(q,\omega) = \frac{\rho_{ind}(q,\omega)}{\e_0 q^2}
+    \,\,\,.
+\end{equation}
+The total potential $\phi$, at the level of linear response, is then given by the sum
+\begin{equation}
+    \label{phi def}
+    \phi(q,\omega) = \phi_{ind}(q,\omega) + \phi_{ext}(q,\omega)
+    \,\,\,,
+\end{equation}
+which contains the material response through $\phi_{ind}$ \eqref{Fourier phi ind}.  
+
+When using an electromagnetic (or ``dielectric") analysis to extract the electron energy loss function, we ultimately desire the frequency- and wavevector-resolved density response function,
+\begin{equation}
+    \label{Fourier chi}
+    \chi(q,\omega):=\chi(q,q';\omega)_{q=q'}
+    :=
+    \lb\frac{1}{\vol}\int d^3 r d^3 r' e^{iq\cdot r} e^{-i q'\cdot r'}\chi(r,r';\omega)\rb_{q=q'}
+    \,\,\,.
+\end{equation}
+The difficulty of modeling the response of a material is often due to its lack of homogeneity, which results in the need for the double Fourier transform in \eqref{Fourier chi}.  In systems with translation-invariance, \eqref{Fourier chi} reduces to the expected Fourier transform.  When applied to a superlattice, we presume translation-invariance in the planar directions (those perpendicular to the superlattice dimension), but have only discrete translation symmetry in the layering direction.  As such, out-of-plane wavevectors are only conserved up to reciprocal lattice vectors,
+\begin{equation}
+    \label{Fourier chi expression}
+    \chi(q_\parallel,\omega;z,z') = \sum_G e^{iG z} \int \frac{dk}{2\pi} e^{ik(z-z')}\chi(q_\parallel,\omega;k+G,k)
+    \,\,\,,
+\end{equation}
+where $q_\parallel$ is the planar component of the Fourier wavevector and the sum is over all out-of-plane reciprocal vectors.  As is standard, we enumerate the continuous out-of-plane wavevector $k$ in \eqref{Fourier chi expression} through its restriction to the first Brillouin zone --- denoted by $\bar k$ --- and a remainder, which is a reciprocal lattice vector.  Now, the Fourier transform of $\chi$ is a matrix in the out-of-plane reciprocal vectors and \eqref{Fourier chi expression} becomes
+\begin{equation}
+    \label{Fourier chi G matrix}
+    \chi(q_\parallel,\omega;z,z') = \sum_{G,G'} e^{iG z} e^{-i G' z'} \int_\text{BZ} \frac{d\bar k}{2\pi} e^{i\bar k(z-z')}\chi(q_\parallel,\omega;\bar k+G,\bar k+G')
+    \,\,\,.
+\end{equation}
+
+The structure of \eqref{Fourier chi G matrix} transforms the real-space linear response relationship of \eqref{real space chi def} into the matrix equation
+\begin{equation}
+    \label{planar linear response}
+     \rho_{ind}(q_\parallel,\omega;\bar k+G) = e^2\sum_{G'}\chi(q_\parallel,\omega;\bar k+G, \bar k+G')
+     \phi_{ext}(q_\parallel,\omega;\bar k+G')
+     \,\,\,,
+\end{equation}
+which results an analogous matrix equation for the screening field,
+\begin{equation}
+    \label{planar phi ind}
+     \phi_{ind}(q_\parallel,\omega;\bar k+G) = \frac{e^2}{\e_0\lb q_\parallel^2+\lp\bar k+G\rp^2\rb} \sum_{G'}\chi(q_\parallel,\omega;\bar k+G, \bar k+G')
+     \phi_{ext}(q_\parallel,\omega;\bar k+G')
+     \,\,\,.
+\end{equation}
+The reciprocal components of the (total) potential $\phi$ can now be written in terms of $\phi_{ext}$ through the linear response relation as
+\begin{equation}
+    \label{planar phi to phi ext relation}
+    \phi(q_\parallel,\omega;\bar k+G) 
+    =
+    \sum_{G'}
+    \lb
+    \delta_{G,G'}
+    +
+    V(q_\parallel,\bar k+G)
+    \chi(q_\parallel,\omega;\bar k+G, \bar k+G')
+    \rb
+    \phi_{ext}(q_\parallel,\omega;\bar k+ G')
+    \,\,\,,
+\end{equation}
+where we've collected the prefactor of \eqref{planar phi ind} into the Coulomb interaction,
+\begin{equation}
+    \label{V def}
+    V(q_\parallel,\bar k+G):=
+    \frac{e^2}{\e_0\lb q_\parallel^2+\lp\bar k+G\rp^2\rb}
+    \,\,\,.
+\end{equation}
