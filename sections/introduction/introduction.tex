@@ -1,7 +1,7 @@
 \section*{Introduction}
 \addcontentsline{toc}{section}{Introduction}
 
-In this paper, I will demonstrate how to obtain the frequency- and wavevector-resolved density response function of a superlattice,
+In this paper, I will calcaulte the frequency- and wavevector-resolved density response function,
 \begin{equation}
     \label{Fourier chi}
     \chi(q,\omega):=\chi(q,q';\omega)_{q=q'}
@@ -9,7 +9,7 @@ In this paper, I will demonstrate how to obtain the frequency- and wavevector-re
     \lb\frac{1}{\vol}\int d^3 r d^3 r' e^{iq\cdot r} e^{-i q'\cdot r'}\chi(r,r';\omega)\rb_{q=q'}
     \,\,\,,
 \end{equation}
-in the long wavelength limit.\footnote{Here, the ``long wavelength limit'' refers to wavevectors along the superlattice direction that lie within the first Brillouin zone.}  By ``superlattice," I mean to consider a system with translation-invariance in the planar directions (those perpendicular to the superlattice dimension),\footnote{This assumption can be relaxed to the discrete translation symmetry of a crystalline solid, so long as the ``long wavelength limit'' is appropriately redefined.} and discrete translation symmetry in the layering direction.  In particular, I'll focus on the geometry in Fig. \ref{figure: superlattice geometry}, where dielectric regions are regularly separated by conducting planes.\footnote{More complicated bi-layer, tri-layer, or n-layer systems are more or less amenable to the same analysis, as presented in \cite{Cottam1993, Cottam2004}.}  By ``electrostatic,'' I mean to define the system under study in terms of electric potentials and charge densities; i.e., I'll restrict the study of superlattices to the non-relativistic and non-retarded limit.  In terms of the wavevector $q$ and frequency $\omega$ of excitations within this framework, the subsequent electrostatic analysis roughly holds in the regime where $q^2\gg \omega^2/c^2$.
+of a superlattice in the long wavelength limit.\footnote{Here, the ``long wavelength limit'' refers to wavevectors along the superlattice direction that lie within the first Brillouin zone.}  By ``superlattice," I mean to consider a system with translation-invariance along the planar directions (those perpendicular to the superlattice dimension)\footnote{This assumption can be relaxed to the discrete translation symmetry of a crystalline solid, so long as the ``long wavelength limit'' is appropriately redefined.} and discrete translation symmetry in the layering direction.  In particular, I'll focus on the geometry in Fig. \ref{figure: superlattice geometry}, where dielectric regions are separated by regularly-spaced conducting planes.\footnote{More complicated bi-layer, tri-layer, or n-layer systems are more or less amenable to the same analysis, as presented in \cite{Cottam1993, Cottam2004}.}  I will utilize an electrostatic framework, working in the non-relativistic and non-retarded limit governed by electric potentials and charge densities.  The subseqeuent electrostatic analysis roughly applies in the limit $q^2\gg \omega^2/c^2$, where $q$ and $\omega$ are the wavevector and frequency of excitations within this framework, respectively.
 
 \begin{figure}
     \centering
