@@ -7,7 +7,7 @@ The electrostatic framework considers the screening response of the superlattice
     \rho_{ind}(r,t) = e^2\int d^3 r' dt' \chi(r,r';t-t')\phi_{ext}(r',t')
     \,\,\,.
 \end{equation}
-By Gauss's law, the superlattice contribues a screening field $\phi_{ind}$; in Fourier space,
+Through Gauss's law, the induced charge density sources the screening field $\phi_{ind}$; in Fourier space,
 \begin{equation}
     \label{Fourier phi ind}
     \phi_{ind}(q,\omega) = \frac{\rho_{ind}(q,\omega)}{\e_0 q^2}
@@ -24,55 +24,54 @@ At the level of linear response, the (total) potential $\phi$ results from the s
 If the superlattice had continuous translation symmetry, the linear response for $\rho_{ind}$ in \eqref{real space chi def} could be expressed in terms of the product of Fourier components for $\chi$ and $\phi_{ext}$.  The superlattice geometry of Fig. \ref{figure: superlattice geometry}, however, has only discrete translation symmetry.  As a result, a potential perturbation with fixed out-of-place wavevector induces a charge density modulation at all reciprocal lattice vectors.  In particular, we have that
 \begin{equation}
     \label{Fourier chi expression}
-    \chi(q_\parallel,\omega;z,z') = \sum_G e^{iG z} \int \frac{dk}{2\pi} e^{ik(z-z')}\chi(q_\parallel,\omega;k+G,k)
+    \chi(q_\parallel,\omega;z,z') = \sum_G e^{iG z} \int \frac{dQ}{2\pi} e^{ik(z-z')}\chi(q_\parallel,\omega;Q+G,Q)
     \,\,\,,
 \end{equation}
-where $q_\parallel$ is the planar component of the Fourier wavevector and the sum is over all out-of-plane reciprocal vectors.  As is standard, the continuous out-of-plane wavevector $k$ in \eqref{Fourier chi expression} can be restricted to the first Brillouin zone (denoted as $\bar k$ in what follows),
+where $q_\parallel$ is the planar component of the Fourier wavevector and the sum is over all out-of-plane reciprocal vectors.  As is standard, the continuous out-of-plane wavevector $Q$ in \eqref{Fourier chi expression} can be restricted to the first Brillouin zone (nevertheless denoted as $Q$ in what follows),
 \begin{equation}
     \label{Fourier chi G matrix}
-    \chi(q_\parallel,\omega;z,z') = \sum_{G,G'} e^{iG z} e^{-i G' z'} \int_\text{BZ} \frac{d\bar k}{2\pi} e^{i\bar k(z-z')}\chi(q_\parallel,\omega;\bar k+G,\bar k+G')
+    \chi(q_\parallel,\omega;z,z') = \sum_{G,G'} e^{iG z} e^{-i G' z'} \int_\text{BZ} \frac{dQ}{2\pi} e^{iQ(z-z')}\chi(q_\parallel,\omega;Q+G,Q+G')
     \,\,\,.
 \end{equation}
 The best we can do to simplify the linear response relationship in \eqref{real space chi def} is to obtain a matrix equation in the reciprocal lattice vectors of the superlattice,
 \begin{equation}
     \label{planar linear response}
-     \rho_{ind}(q_\parallel,\omega;\bar k+G) = e^2\sum_{G'}\chi(q_\parallel,\omega;\bar k+G, \bar k+G')
-     \phi_{ext}(q_\parallel,\omega;\bar k+G')
+     \rho_{ind}(q_\parallel,\omega;Q+G) = e^2\sum_{G'}\chi(q_\parallel,\omega;Q+G, Q+G')
+     \phi_{ext}(q_\parallel,\omega;Q+G')
      \,\,\,.
 \end{equation}
 
-
-The expression for the total potential $\phi$ \eqref{phi def} can be understood by first expanding the screening field $\phi_{ind}$ \eqref{Fourier phi ind} in terms of the superlattice contributions,
+The superlattice structure contributes to the potential $\phi$ through the screening field $\phi_{ind}$.  Inserting the previous expression for $\rho_{ind}$ \eqref{planar linear response} into the relation for the screening response \eqref{Fourier phi ind},
 \begin{equation}
     \label{planar phi ind}
-     \phi_{ind}(q_\parallel,\omega;\bar k+G) = \frac{e^2}{\e_0\lb q_\parallel^2+\lp\bar k+G\rp^2\rb} \sum_{G'}\chi(q_\parallel,\omega;\bar k+G, \bar k+G')
-     \phi_{ext}(q_\parallel,\omega;\bar k+G')
+     \phi_{ind}(q_\parallel,\omega;Q+G) = \frac{e^2}{\e_0\lb q_\parallel^2+\lp Q+G\rp^2\rb} \sum_{G'}\chi(q_\parallel,\omega;Q+G, Q+G')
+     \phi_{ext}(q_\parallel,\omega;Q+G')
      \,\,\,.
 \end{equation}
-Finally, the relationship between the total potential $\phi$, the electronic density response function $\chi$, and the perturbing potential $\phi_{ext}$ can be expressed as
+As a result, the total potential $\phi$, the electronic density response function $\chi$, and the perturbing potential $\phi_{ext}$ are related according to
 \begin{equation}
     \label{planar phi to phi ext relation}
-    \phi(q_\parallel,\omega;\bar k+G) 
+    \phi(q_\parallel,\omega;Q+G) 
     =
     \sum_{G'}
     \lb
     \delta_{G,G'}
     +
-    V(q_\parallel,\bar k+G)
-    \chi(q_\parallel,\omega;\bar k+G, \bar k+G')
+    V(q_\parallel,Q+G)
+    \chi(q_\parallel,\omega;Q+G, Q+G')
     \rb
-    \phi_{ext}(q_\parallel,\omega;\bar k+ G')
+    \phi_{ext}(q_\parallel,\omega;Q+ G')
     \,\,\,,
 \end{equation}
 where I've collected the prefactor of \eqref{planar phi ind} into the Coulomb interaction,
 \begin{equation}
     \label{V def}
-    V(q_\parallel,\bar k+G):=
-    \frac{e^2}{\e_0\lb q_\parallel^2+\lp\bar k+G\rp^2\rb}
+    V(q_\parallel,Q+G):=
+    \frac{e^2}{\e_0\lb q_\parallel^2+\lp Q+G\rp^2\rb}
     \,\,\,.
 \end{equation}
 
-The utility of the electrostatic screening response contained within \eqref{planar phi to phi ext relation} relies on noting that we can control the nature of the probe modeled by $\phi_{ext}$ and that we can decide what part of the total potential $\phi$ to calculate.  If we consider the long wavelength response to a long wavelength perturbation, or $G=G'=0$ in \eqref{planar phi to phi ext relation}, then we can reduce the matrix equation in \eqref{planar phi to phi ext relation} to the {\it scalar} relationship,
+The electrostatic relationship in \eqref{planar phi to phi ext relation} can be greatly simplified in practice.  The experimenter can control the nature of the probe modeled by $\phi_{ext}$.  In particular, we can consider the superlattice response to a long wavelength perturbation, which allows us to ignore all but the $G'=0$ term.  Similarly, we can focus on the long wavelength superlattice response, which separately sets $G=0$.  As a result, the long wavelength response of the superlattice to a long wavelength perturbation is governed by a {\it scalar} equation,
 \begin{equation}
     \label{long wavelength linear response relationship}
     \phi(q_\parallel, Q, \omega) 
@@ -84,5 +83,6 @@ The utility of the electrostatic screening response contained within \eqref{plan
     \chi(q_\parallel, Q, \omega)
     \rb
     \phi_{ext}(q_\parallel, Q, \omega)
-    \,\,\,.
+    \,\,\,,
 \end{equation}
+where $Q$ remains restricted to the first Brillouin zone.  Given a perturbation $\phi_{ext}$, we can use \eqref{long wavelength linear response relationship} to determine the density response function \eqref{Fourier chi} if we can calculate the total potential $\phi$.
