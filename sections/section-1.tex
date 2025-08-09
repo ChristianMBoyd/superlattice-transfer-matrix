@@ -9,7 +9,7 @@ The electrostatic framework considers the screening response of the superlattice
 \end{equation}
 Through Gauss's law, the induced charge density sources the screening field $\phi_{ind}$; in Fourier space,\footnote{I'll be working in S.I. units throughout.}
 \begin{equation}
-    \label{Fourier phi ind}
+    \label{Fourier induced Gauss law}
     \phi_{ind}(q,\omega) = \frac{\rho_{ind}(q,\omega)}{\e_0 q^2}
     \,\,\,.
 \end{equation}
@@ -17,46 +17,41 @@ Through Gauss's law, the induced charge density sources the screening field $\ph
 
 If the superlattice had continuous translation symmetry, the linear response for $\rho_{ind}$ in \eqref{real space chi def} could be expressed in terms of the product of Fourier components for $\chi$ and $\phi_{ext}$.  The superlattice geometry of Fig. \ref{figure: superlattice geometry}, however, has only discrete translation symmetry.  As a result, a potential perturbation with fixed out-of-place wavevector induces a charge density modulation at all reciprocal lattice vectors.  In particular, we have that
 \begin{equation}
-    \label{Fourier chi expression}
+    \label{superlattice density response structure}
     \chi(q_\parallel,\omega;z,z') = \sum_G e^{iG z} \int \frac{dQ}{2\pi} e^{ik(z-z')}\chi(q_\parallel,\omega;Q+G,Q)
     \,\,\,,
 \end{equation}
-where $q_\parallel$ is the planar component of the Fourier wavevector and the sum is over all out-of-plane reciprocal vectors.  As is standard, the continuous out-of-plane wavevector---$Q$ in \eqref{Fourier chi expression}---can be restricted to the first Brillouin zone,
+where $q_\parallel$ is the planar component of the Fourier wavevector and the sum is over all out-of-plane reciprocal vectors.  As is standard, the continuous out-of-plane wavevector---$Q$ in \eqref{superlattice density response structure}---can be restricted to the first Brillouin zone,
 \begin{equation}
-    \label{Fourier chi G matrix}
     \chi(q_\parallel,\omega;z,z') = \sum_{G,G'} e^{iG z} e^{-i G' z'} \int_\text{BZ} \frac{dQ}{2\pi} e^{iQ(z-z')}\chi(q_\parallel,\omega;Q+G,Q+G')
     \,\,\,.
 \end{equation}
 The best we can do to simplify the linear response relationship in \eqref{real space chi def} is to obtain a matrix equation in the reciprocal lattice vectors of the superlattice,
 \begin{equation}
-    \label{planar linear response}
      \rho_{ind}(q_\parallel,\omega;Q+G) = e^2\sum_{G'}\chi(q_\parallel,\omega;Q+G, Q+G')
      \phi_{ext}(q_\parallel,\omega;Q+G')
      \,\,\,.
 \end{equation}
 
-The superlattice structure contributes to the screening response through \eqref{Fourier phi ind},
+The superlattice structure contributes to the screening response through \eqref{Fourier induced Gauss law},
 \begin{equation}
-    \label{planar phi ind}
      \phi_{ind}(q_\parallel,\omega;Q+G) = \sum_{G'}V(q_\parallel,Q+G)\chi(q_\parallel,\omega;Q+G, Q+G')
      \phi_{ext}(q_\parallel,\omega;Q+G')
      \,\,\,,
 \end{equation}
 where I've defined the Coulomb interaction,
 \begin{equation}
-    \label{V def}
     V(q_\parallel,Q+G):=
     \frac{e^2}{\e_0\lb q_\parallel^2+\lp Q+G\rp^2\rb}
     \,\,\,.
 \end{equation}
 The {\it total} potential $\phi$ is then made up of three components,
 \begin{equation}
-    \label{total potential def}
     \phi = \phi_0 + \phi_{ind} + \phi_{ext},
 \end{equation}
 where $\phi_0$ describes the micro-structure of the unperturbed superlattice potential.\footnote{The macroscopic constituents in Fig. \ref{figure: superlattice geometry} are presumed charge-neutral on the whole, but nevertheless contain ionic and electronic charge densities that vary on microscopic length scales.}  As a result, the total potential $\phi$, the electronic density response function $\chi$, and the perturbing potential $\phi_{ext}$ are related according to
 \begin{eqnarray}
-    \label{planar phi to phi ext relation}
+    \label{microscopic total potential expression}
     \nonumber 
     \phi(q_\parallel,\omega;Q+G) 
     &=&
@@ -75,9 +70,9 @@ where $\phi_0$ describes the micro-structure of the unperturbed superlattice pot
     \,\,\,.
 \end{eqnarray}
 
-The electrostatic relationship in \eqref{planar phi to phi ext relation} can be greatly simplified if we restrict our study to the long wavelength limit.  We can neglect the micro-structure $\phi_0$ by two separate arguments.  If we strict ourselves to truly dynamic $\omega>0$ response, then $\phi_0$ should not contribute as it describes the static superlattice.  Additionally, $\phi_0$ should not contribute in the long wavelength $G=0$ limit due to charge neutrality.\footnote{This is more subtle, as I need to argue that we don't have any interesting commensurate structures arising from the inter-play of superlattice and microscopic lattice scales.  A truly microscopic analysis might find interesting long wavelength contributions due to these effects.}  Either way, we can safely neglect $\phi_0$ in the subsequent electrostatic analysis by focusing on the $G=0$ response.  On the right-hand side of \eqref{planar phi to phi ext relation}, the experimenter can control the nature of the probe modeled by $\phi_{ext}$.  In particular, we can consider the superlattice response to a long wavelength perturbation, where $G'=0$.  As a result, the long wavelength response of the superlattice to a long wavelength perturbation is governed by a {\it scalar} equation,
+The electrostatic relationship in \eqref{microscopic total potential expression} can be greatly simplified if we restrict our study to the long wavelength limit.  We can neglect the micro-structure $\phi_0$ by two separate arguments.  If we strict ourselves to truly dynamic $\omega>0$ response, then $\phi_0$ should not contribute as it describes the static superlattice.  Additionally, $\phi_0$ should not contribute in the long wavelength $G=0$ limit due to charge neutrality.\footnote{This is more subtle, as I need to argue that we don't have any interesting commensurate structures arising from the inter-play of superlattice and microscopic lattice scales.  A truly microscopic analysis might find interesting long wavelength contributions due to these effects.}  Either way, we can safely neglect $\phi_0$ in the subsequent electrostatic analysis by focusing on the $G=0$ response.  On the right-hand side of \eqref{microscopic total potential expression}, the experimenter can control the nature of the probe modeled by $\phi_{ext}$.  In particular, we can consider the superlattice response to a long wavelength perturbation, where $G'=0$.  As a result, the long wavelength response of the superlattice to a long wavelength perturbation is governed by a {\it scalar} equation,
 \begin{equation}
-    \label{long wavelength linear response relationship}
+    \label{long wavelength total potential}
     \phi(q_\parallel, Q, \omega) 
     =
     \lb
@@ -89,4 +84,4 @@ The electrostatic relationship in \eqref{planar phi to phi ext relation} can be 
     \phi_{ext}(q_\parallel, Q, \omega)
     \,\,\,,
 \end{equation}
-where $Q$ remains restricted to the first Brillouin zone.  If we can solve for $\phi$ in the presence of a generic perturbation $\phi_{ext}$, then \eqref{long wavelength linear response relationship} allows us to determine the density response function $\chi$ \eqref{Fourier chi}.
+where $Q$ remains restricted to the first Brillouin zone.  If we can solve for $\phi$ in the presence of a generic perturbation $\phi_{ext}$, then \eqref{long wavelength total potential} allows us to determine the density response function $\chi$ \eqref{Fourier density response def}.
