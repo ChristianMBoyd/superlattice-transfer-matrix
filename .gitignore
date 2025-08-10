@@ -325,5 +325,6 @@ TSWLatexianTemp*
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
 
-## I prefer the pdf to be built locally or as a pipeline artifact, rather than tracked
-*.pdf
+## I prefer the pdf to be built locally or as a pipeline artifact, rather than tracked.
+##      This form will ignore the top-level document pdf, but not pdfs in figures/*
+/*.pdf
